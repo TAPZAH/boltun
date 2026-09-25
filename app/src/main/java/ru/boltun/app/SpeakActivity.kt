@@ -1,4 +1,4 @@
-package ru.readaloud.app
+package ru.boltun.app
 
 import android.app.Activity
 import android.content.Intent

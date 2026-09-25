@@ -1,4 +1,4 @@
-package ru.readaloud.app
+package ru.boltun.app
 
 import android.content.Context
 
@@ -35,7 +35,7 @@ class Prefs(context: Context) {
         set(value) = sp.edit().putInt(KEY_Y, value).apply()
 
     companion object {
-        private const val NAME = "readaloud"
+        private const val NAME = "boltun"
         private const val KEY_ENABLED = "enabled"
         private const val KEY_SPEED = "speed"
         private const val KEY_ENGINE = "engine"

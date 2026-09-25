@@ -11,5 +11,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "ReadAloud"
+rootProject.name = "Boltun"
 include(":app")

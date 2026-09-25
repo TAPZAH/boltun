@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Озвучка</string>
-    <string name="a11y_description">Позволяет «Озвучке» считывать выделенный в любом приложении текст и произносить его вслух.</string>
+    <string name="app_name">Болтун</string>
+    <string name="a11y_description">Позволяет «Болтуну» считывать выделенный в любом приложении текст и произносить его вслух.</string>
 
     <string name="notif_channel_name">Воспроизведение</string>
-    <string name="notif_title">Озвучка включена</string>
+    <string name="notif_title">Болтун включён</string>
     <string name="notif_text">Нажмите плавающую кнопку, чтобы озвучить выделенный текст</string>
     <string name="notif_stop">Стоп</string>
 
@@ -35,7 +35,7 @@
     <string name="status_notif_on">Уведомления: разрешены</string>
     <string name="status_notif_off">Уведомления: запрещены</string>
     <string name="hint">Выделите текст в любом приложении и нажмите плавающую кнопку.</string>
-    <string name="test_phrase">Озвучка готова. Выделите любой текст и нажмите кнопку.</string>
+    <string name="test_phrase">Болтун готов. Выделите любой текст и нажмите кнопку.</string>
 
     <string name="toast_no_selection">Ничего не выделено. Выделите текст или скопируйте его и нажмите снова.</string>
     <string name="toast_no_overlay">Сначала разрешите показ поверх других окон</string>

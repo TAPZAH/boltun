@@ -1,4 +1,4 @@
-package ru.readaloud.app
+package ru.boltun.app
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -582,12 +582,12 @@ class FloatingService : Service(), TtsController.Listener {
     }
 
     companion object {
-        const val ACTION_START = "ru.readaloud.app.action.START"
-        const val ACTION_STOP = "ru.readaloud.app.action.STOP"
-        const val ACTION_SPEAK = "ru.readaloud.app.action.SPEAK"
-        const val EXTRA_TEXT = "ru.readaloud.app.extra.TEXT"
+        const val ACTION_START = "ru.boltun.app.action.START"
+        const val ACTION_STOP = "ru.boltun.app.action.STOP"
+        const val ACTION_SPEAK = "ru.boltun.app.action.SPEAK"
+        const val EXTRA_TEXT = "ru.boltun.app.extra.TEXT"
 
-        private const val CHANNEL_ID = "readaloud_foreground"
+        private const val CHANNEL_ID = "boltun_foreground"
         private const val NOTIFICATION_ID = 1
         private const val BUBBLE_DP = 52
 

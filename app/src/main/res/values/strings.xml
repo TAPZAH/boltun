@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Read Aloud</string>
-    <string name="a11y_description">Allows Read Aloud to capture the text you select in any app and read it out loud.</string>
+    <string name="app_name">Boltun</string>
+    <string name="a11y_description">Allows Boltun to capture the text you select in any app and read it out loud.</string>
 
     <string name="notif_channel_name">Playback</string>
-    <string name="notif_title">Read Aloud is active</string>
+    <string name="notif_title">Boltun is active</string>
     <string name="notif_text">Tap the floating button to read the selected text</string>
     <string name="notif_stop">Stop</string>
 
@@ -35,7 +35,7 @@
     <string name="status_notif_on">Notifications: allowed</string>
     <string name="status_notif_off">Notifications: not allowed</string>
     <string name="hint">Select text in any app, then tap the floating button.</string>
-    <string name="test_phrase">Read Aloud is ready. Select any text and tap the button.</string>
+    <string name="test_phrase">Boltun is ready. Select any text and tap the button.</string>
 
     <string name="toast_no_selection">Nothing selected. Select text or copy it, then tap again.</string>
     <string name="toast_no_overlay">Allow display over other apps first</string>

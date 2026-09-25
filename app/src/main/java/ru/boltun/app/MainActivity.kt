@@ -1,4 +1,4 @@
-package ru.readaloud.app
+package ru.boltun.app
 
 import android.Manifest
 import android.accessibilityservice.AccessibilityServiceInfo

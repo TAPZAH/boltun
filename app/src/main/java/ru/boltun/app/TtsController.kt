@@ -1,4 +1,4 @@
-package ru.readaloud.app
+package ru.boltun.app
 
 import android.content.Context
 import android.content.Intent
@@ -342,6 +342,6 @@ class TtsController(context: Context) {
     }
 
     companion object {
-        private const val UTTERANCE_ID = "readaloud"
+        private const val UTTERANCE_ID = "boltun"
     }
 }
