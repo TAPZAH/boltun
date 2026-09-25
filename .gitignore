@@ -1,0 +1,16 @@
+# Build output
+.gradle/
+build/
+*/build/
+
+# Local SDK path
+local.properties
+
+# Signing secrets
+keystore/
+keystore.properties
+
+# IDE / Kotlin
+.idea/
+*.iml
+.kotlin/

@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Озвучка</string>
+    <string name="a11y_description">Позволяет «Озвучке» считывать выделенный в любом приложении текст и произносить его вслух.</string>
+
+    <string name="notif_channel_name">Воспроизведение</string>
+    <string name="notif_title">Озвучка включена</string>
+    <string name="notif_text">Нажмите плавающую кнопку, чтобы озвучить выделенный текст</string>
+    <string name="notif_stop">Стоп</string>
+
+    <string name="btn_overlay">1. Разрешить показ поверх окон</string>
+    <string name="btn_a11y">2. Включить службу «Специальные возможности»</string>
+    <string name="btn_notif">3. Разрешить уведомления</string>
+    <string name="btn_start">Показать плавающую кнопку</string>
+    <string name="btn_stop">Скрыть плавающую кнопку</string>
+    <string name="btn_battery">Отключить оптимизацию батареи</string>
+    <string name="btn_tts_settings">Синтез по умолчанию</string>
+    <string name="btn_pick_engine">Выбрать движок синтеза</string>
+    <string name="engine_pick_title">Движок синтеза</string>
+    <string name="engine_system_option">Системный (по умолчанию)</string>
+    <string name="engine_none">Нет установленных движков синтеза</string>
+    <string name="engine_disabled">не включён</string>
+    <string name="engine_enable_hint">Включите этот движок в системных настройках синтеза речи</string>
+    <string name="engine_label">Синтез: %1$s</string>
+    <string name="btn_test">Проверить голос</string>
+    <string name="btn_probe">Проверить захват выделения</string>
+    <string name="probe_ok">Захвачено %1$d симв. [%2$s]:\n%3$s</string>
+    <string name="probe_empty">Ничего не захвачено (нет выделения и буфера)</string>
+
+    <string name="speed_label">Скорость: %1$.2f×</string>
+    <string name="status">Состояние</string>
+    <string name="status_overlay_on">Поверх окон: разрешено</string>
+    <string name="status_overlay_off">Поверх окон: запрещено</string>
+    <string name="status_a11y_on">Спец. возможности: включены</string>
+    <string name="status_a11y_off">Спец. возможности: выключены</string>
+    <string name="status_notif_on">Уведомления: разрешены</string>
+    <string name="status_notif_off">Уведомления: запрещены</string>
+    <string name="hint">Выделите текст в любом приложении и нажмите плавающую кнопку.</string>
+    <string name="test_phrase">Озвучка готова. Выделите любой текст и нажмите кнопку.</string>
+
+    <string name="toast_no_selection">Ничего не выделено. Выделите текст или скопируйте его и нажмите снова.</string>
+    <string name="toast_no_overlay">Сначала разрешите показ поверх других окон</string>
+    <string name="toast_a11y_needed">Сначала включите службу «Специальные возможности»</string>
+
+    <string name="cd_play">Слушать</string>
+    <string name="cd_pause">Пауза</string>
+    <string name="cd_stop">Стоп</string>
+    <string name="cd_speed">Скорость</string>
+    <string name="cd_bubble">Озвучить</string>
+</resources>

@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Read Aloud</string>
+    <string name="a11y_description">Allows Read Aloud to capture the text you select in any app and read it out loud.</string>
+
+    <string name="notif_channel_name">Playback</string>
+    <string name="notif_title">Read Aloud is active</string>
+    <string name="notif_text">Tap the floating button to read the selected text</string>
+    <string name="notif_stop">Stop</string>
+
+    <string name="btn_overlay">1. Allow display over other apps</string>
+    <string name="btn_a11y">2. Enable Accessibility service</string>
+    <string name="btn_notif">3. Allow notifications</string>
+    <string name="btn_start">Show floating button</string>
+    <string name="btn_stop">Hide floating button</string>
+    <string name="btn_battery">Disable battery optimization</string>
+    <string name="btn_tts_settings">Default speech engine</string>
+    <string name="btn_pick_engine">Choose speech engine</string>
+    <string name="engine_pick_title">Speech engine</string>
+    <string name="engine_system_option">System default</string>
+    <string name="engine_none">No speech engines installed</string>
+    <string name="engine_disabled">disabled</string>
+    <string name="engine_enable_hint">Enable this engine in the system text-to-speech settings</string>
+    <string name="engine_label">Speech engine: %1$s</string>
+    <string name="btn_test">Test voice</string>
+    <string name="btn_probe">Check selection capture</string>
+    <string name="probe_ok">Captured %1$d chars [%2$s]:\n%3$s</string>
+    <string name="probe_empty">Nothing captured (no selection and no clipboard)</string>
+
+    <string name="speed_label">Speed: %1$.2f×</string>
+    <string name="status">Status</string>
+    <string name="status_overlay_on">Overlay: allowed</string>
+    <string name="status_overlay_off">Overlay: not allowed</string>
+    <string name="status_a11y_on">Accessibility: on</string>
+    <string name="status_a11y_off">Accessibility: off</string>
+    <string name="status_notif_on">Notifications: allowed</string>
+    <string name="status_notif_off">Notifications: not allowed</string>
+    <string name="hint">Select text in any app, then tap the floating button.</string>
+    <string name="test_phrase">Read Aloud is ready. Select any text and tap the button.</string>
+
+    <string name="toast_no_selection">Nothing selected. Select text or copy it, then tap again.</string>
+    <string name="toast_no_overlay">Allow display over other apps first</string>
+    <string name="toast_a11y_needed">Enable the Accessibility service first</string>
+
+    <string name="cd_play">Play</string>
+    <string name="cd_pause">Pause</string>
+    <string name="cd_stop">Stop</string>
+    <string name="cd_speed">Speed</string>
+    <string name="cd_bubble">Read aloud</string>
+</resources>
