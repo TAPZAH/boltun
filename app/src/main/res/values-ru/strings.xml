@@ -46,4 +46,11 @@
     <string name="cd_stop">Стоп</string>
     <string name="cd_speed">Скорость</string>
     <string name="cd_bubble">Озвучить</string>
+    <string name="cd_prev">Предыдущее предложение</string>
+    <string name="cd_next">Следующее предложение</string>
+    <string name="cd_repeat">Повторить предложение</string>
+
+    <string name="menu_resume">Продолжить с места</string>
+    <string name="menu_app">Приложение</string>
+    <string name="menu_close">Закрыть</string>
 </resources>

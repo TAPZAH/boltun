@@ -15,6 +15,7 @@ import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
 import android.util.TypedValue
+import android.view.GestureDetector
 import android.view.Gravity
 import android.view.MotionEvent
 import android.view.View
@@ -36,11 +37,14 @@ class FloatingService : Service(), TtsController.Listener {
     private val handler = Handler(Looper.getMainLooper())
 
     private var bubbleView: ImageView? = null
-    private var panelView: LinearLayout? = null
+    private var menuView: LinearLayout? = null
     private var bubbleParams: WindowManager.LayoutParams? = null
-    private var panelParams: WindowManager.LayoutParams? = null
+    private var menuParams: WindowManager.LayoutParams? = null
+    private var counterView: TextView? = null
+    private var resumeButton: TextView? = null
+    private var playPauseButton: ImageView? = null
     private var speedButton: TextView? = null
-    private var panelAdded = false
+    private var menuAdded = false
 
     override fun onBind(intent: Intent?): IBinder? = null
 
@@ -80,12 +84,16 @@ class FloatingService : Service(), TtsController.Listener {
     override fun onDestroy() {
         isRunning = false
         bubbleView?.let { removeWindow(it) }
-        panelView?.let { removeWindow(it) }
+        menuView?.let { removeWindow(it) }
         bubbleView = null
-        panelView = null
+        menuView = null
         bubbleParams = null
-        panelParams = null
+        menuParams = null
+        counterView = null
+        resumeButton = null
+        playPauseButton = null
         speedButton = null
+        menuAdded = false
         try {
             tts.shutdown()
         } catch (_: Exception) {
@@ -158,7 +166,8 @@ class FloatingService : Service(), TtsController.Listener {
             size,
             size,
             overlayType(),
-            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
+                WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL,
             PixelFormat.TRANSLUCENT
         ).apply {
             gravity = Gravity.TOP or Gravity.START
@@ -166,37 +175,13 @@ class FloatingService : Service(), TtsController.Listener {
             y = prefs.y
         }
 
-        val panel = LinearLayout(this).apply {
-            orientation = LinearLayout.HORIZONTAL
-            gravity = Gravity.CENTER_VERTICAL
-            setBackgroundResource(R.drawable.bg_panel)
-            setPadding(dp(6), dp(4), dp(6), dp(4))
-            visibility = View.GONE
-        }
-
-        val play = makeIconButton(R.drawable.ic_play, R.string.cd_play)
-        val pause = makeIconButton(R.drawable.ic_pause, R.string.cd_pause)
-        val stop = makeIconButton(R.drawable.ic_stop, R.string.cd_stop)
-        val speed = makeSpeedButton()
-        speedButton = speed
-
-        play.setOnClickListener {
-            if (tts.state == TtsController.State.PAUSED) tts.resume() else readSelection()
-        }
-        pause.setOnClickListener { tts.pause() }
-        stop.setOnClickListener { tts.stop() }
-        speed.setOnClickListener { cycleSpeed() }
-
-        panel.addView(play)
-        panel.addView(pause)
-        panel.addView(stop)
-        panel.addView(speed)
-
-        val panelLp = WindowManager.LayoutParams(
+        val menu = buildMenu()
+        val menuLp = WindowManager.LayoutParams(
             WindowManager.LayoutParams.WRAP_CONTENT,
             WindowManager.LayoutParams.WRAP_CONTENT,
             overlayType(),
-            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
+                WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL,
             PixelFormat.TRANSLUCENT
         ).apply {
             gravity = Gravity.TOP or Gravity.START
@@ -205,11 +190,29 @@ class FloatingService : Service(), TtsController.Listener {
         }
 
         bubbleView = bubble
-        panelView = panel
+        menuView = menu
         bubbleParams = bubbleLp
-        panelParams = panelLp
+        menuParams = menuLp
 
-        bubble.setOnTouchListener(DragListener(bubbleLp))
+        val gestureDetector = GestureDetector(this, object : GestureDetector.SimpleOnGestureListener() {
+            override fun onDown(e: MotionEvent): Boolean = true
+
+            override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
+                readSelection()
+                return true
+            }
+
+            override fun onDoubleTap(e: MotionEvent): Boolean {
+                toggleMenu()
+                return true
+            }
+
+            override fun onLongPress(e: MotionEvent) {
+                tts.stop()
+            }
+        })
+
+        bubble.setOnTouchListener(DragListener(bubbleLp, gestureDetector))
 
         try {
             windowManager.addView(bubble, bubbleLp)
@@ -218,19 +221,110 @@ class FloatingService : Service(), TtsController.Listener {
         }
     }
 
+    private fun buildMenu(): LinearLayout {
+        val menu = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            setBackgroundResource(R.drawable.bg_panel)
+            setPadding(dp(8), dp(8), dp(8), dp(8))
+            minimumWidth = dp(180)
+            visibility = View.GONE
+        }
+
+        val counter = TextView(this).apply {
+            setTextColor(0xFFFFFFFF.toInt())
+            textSize = 13f
+            gravity = Gravity.CENTER
+            setPadding(0, dp(2), 0, dp(6))
+        }
+        counterView = counter
+
+        val navRow = LinearLayout(this).apply {
+            orientation = LinearLayout.HORIZONTAL
+            gravity = Gravity.CENTER
+        }
+        val prev = makeIconButton(R.drawable.ic_prev, R.string.cd_prev)
+        val repeat = makeIconButton(R.drawable.ic_repeat, R.string.cd_repeat)
+        val next = makeIconButton(R.drawable.ic_next, R.string.cd_next)
+        prev.setOnClickListener {
+            tts.jumpBy(-1)
+            updateMenuState()
+        }
+        repeat.setOnClickListener {
+            tts.repeatCurrent()
+            updateMenuState()
+        }
+        next.setOnClickListener {
+            tts.jumpBy(1)
+            updateMenuState()
+        }
+        navRow.addView(prev)
+        navRow.addView(repeat)
+        navRow.addView(next)
+
+        val playRow = LinearLayout(this).apply {
+            orientation = LinearLayout.HORIZONTAL
+            gravity = Gravity.CENTER
+        }
+        val playPause = makeIconButton(R.drawable.ic_play, R.string.cd_play)
+        val stop = makeIconButton(R.drawable.ic_stop, R.string.cd_stop)
+        val speed = makeSpeedButton()
+        playPauseButton = playPause
+        speedButton = speed
+        playPause.setOnClickListener {
+            togglePlayPause()
+            updateMenuState()
+        }
+        stop.setOnClickListener {
+            tts.stop()
+            hideMenu()
+        }
+        speed.setOnClickListener { cycleSpeed() }
+        playRow.addView(playPause)
+        playRow.addView(stop)
+        playRow.addView(speed)
+
+        val resume = makeTextButton(getString(R.string.menu_resume), fullWidth = true)
+        resumeButton = resume
+        resume.setOnClickListener {
+            tts.resumeLast()
+            updateMenuState()
+        }
+
+        val bottomRow = LinearLayout(this).apply {
+            orientation = LinearLayout.HORIZONTAL
+            gravity = Gravity.CENTER
+        }
+        val appButton = makeTextButton(getString(R.string.menu_app), weight = 1f)
+        val closeButton = makeTextButton(getString(R.string.menu_close), weight = 1f)
+        appButton.setOnClickListener {
+            openApp()
+            hideMenu()
+        }
+        closeButton.setOnClickListener { hideMenu() }
+        bottomRow.addView(appButton)
+        bottomRow.addView(closeButton)
+
+        menu.addView(counter)
+        menu.addView(navRow)
+        menu.addView(playRow)
+        menu.addView(resume)
+        menu.addView(bottomRow)
+        return menu
+    }
+
     private inner class DragListener(
-        private val lp: WindowManager.LayoutParams
+        private val lp: WindowManager.LayoutParams,
+        private val gestureDetector: GestureDetector
     ) : View.OnTouchListener {
         private var startX = 0
         private var startY = 0
         private var downRawX = 0f
         private var downRawY = 0f
         private var dragged = false
-
         private val slop = ViewConfiguration.get(this@FloatingService).scaledTouchSlop
-        private val longPress = Runnable { if (!dragged) tts.stop() }
 
         override fun onTouch(view: View, event: MotionEvent): Boolean {
+            gestureDetector.onTouchEvent(event)
             when (event.actionMasked) {
                 MotionEvent.ACTION_DOWN -> {
                     startX = lp.x
@@ -238,41 +332,32 @@ class FloatingService : Service(), TtsController.Listener {
                     downRawX = event.rawX
                     downRawY = event.rawY
                     dragged = false
-                    handler.postDelayed(
-                        longPress,
-                        ViewConfiguration.getLongPressTimeout().toLong()
-                    )
-                    return true
                 }
                 MotionEvent.ACTION_MOVE -> {
                     val dx = (event.rawX - downRawX).toInt()
                     val dy = (event.rawY - downRawY).toInt()
-                    if (abs(dx) > slop || abs(dy) > slop) {
-                        dragged = true
-                        handler.removeCallbacks(longPress)
-                    }
+                    if (abs(dx) > slop || abs(dy) > slop) dragged = true
                     lp.x = startX + dx
                     lp.y = startY + dy
                     bubbleView?.let { updateWindow(it, lp) }
-                    positionPanel()
-                    return true
+                    positionMenu()
                 }
-                MotionEvent.ACTION_UP -> {
-                    handler.removeCallbacks(longPress)
+                MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
                     if (dragged) {
                         prefs.x = lp.x
                         prefs.y = lp.y
-                    } else {
-                        readSelection()
                     }
-                    return true
-                }
-                MotionEvent.ACTION_CANCEL -> {
-                    handler.removeCallbacks(longPress)
-                    return true
                 }
             }
-            return false
+            return true
+        }
+    }
+
+    private fun togglePlayPause() {
+        when (tts.state) {
+            TtsController.State.SPEAKING -> tts.pause()
+            TtsController.State.PAUSED -> tts.resume()
+            TtsController.State.IDLE -> readSelection()
         }
     }
 
@@ -311,51 +396,74 @@ class FloatingService : Service(), TtsController.Listener {
         speedButton?.text = formatSpeed(next)
     }
 
-    private fun setPanelVisible(visible: Boolean) {
-        val panel = panelView ?: return
-        val panelLp = panelParams ?: return
-        if (visible) {
-            panel.visibility = View.VISIBLE
-            if (!panelAdded) {
-                try {
-                    windowManager.addView(panel, panelLp)
-                    panelAdded = true
-                } catch (_: Exception) {
-                }
+    private fun toggleMenu() {
+        if (menuAdded) hideMenu() else showMenu()
+    }
+
+    private fun showMenu() {
+        val menu = menuView ?: return
+        val menuLp = menuParams ?: return
+        menu.visibility = View.VISIBLE
+        if (!menuAdded) {
+            try {
+                windowManager.addView(menu, menuLp)
+                menuAdded = true
+            } catch (_: Exception) {
             }
-            panel.post { positionPanel() }
-        } else {
-            panel.visibility = View.GONE
-            if (panelAdded) {
-                removeWindow(panel)
-                panelAdded = false
-            }
+        }
+        updateMenuState()
+        menu.post { positionMenu() }
+    }
+
+    private fun hideMenu() {
+        val menu = menuView ?: return
+        menu.visibility = View.GONE
+        if (menuAdded) {
+            removeWindow(menu)
+            menuAdded = false
         }
     }
 
-    private fun positionPanel() {
-        val panel = panelView ?: return
-        val panelLp = panelParams ?: return
+    private fun updateMenuState() {
+        counterView?.text = tts.positionLabel()
+        resumeButton?.visibility = if (tts.canResume()) View.VISIBLE else View.GONE
+        playPauseButton?.setImageResource(
+            if (tts.state == TtsController.State.SPEAKING) R.drawable.ic_pause else R.drawable.ic_play
+        )
+    }
+
+    private fun positionMenu() {
+        val menu = menuView ?: return
+        val menuLp = menuParams ?: return
         val bubbleLp = bubbleParams ?: return
-        if (panel.visibility != View.VISIBLE) return
-        val panelWidth = panel.width
-        val panelHeight = panel.height
-        if (panelWidth <= 0 || panelHeight <= 0) return
+        if (menu.visibility != View.VISIBLE) return
+        val menuWidth = menu.width
+        val menuHeight = menu.height
+        if (menuWidth <= 0 || menuHeight <= 0) return
 
         val gap = dp(6)
-        var x = bubbleLp.x - gap - panelWidth
+        var x = bubbleLp.x - gap - menuWidth
         if (x < 0) {
             x = bubbleLp.x + dp(BUBBLE_DP) + gap
-            if (x + panelWidth > screenWidth()) x = screenWidth() - panelWidth
+            if (x + menuWidth > screenWidth()) x = screenWidth() - menuWidth
             if (x < 0) x = 0
         }
         var y = bubbleLp.y
-        if (y + panelHeight > screenHeight()) y = screenHeight() - panelHeight
+        if (y + menuHeight > screenHeight()) y = screenHeight() - menuHeight
         if (y < 0) y = 0
 
-        panelLp.x = x
-        panelLp.y = y
-        updateWindow(panel, panelLp)
+        menuLp.x = x
+        menuLp.y = y
+        updateWindow(menu, menuLp)
+    }
+
+    private fun openApp() {
+        try {
+            startActivity(
+                Intent(this, MainActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            )
+        } catch (_: Exception) {
+        }
     }
 
     private fun makeIconButton(iconRes: Int, contentDescriptionRes: Int): ImageView {
@@ -382,6 +490,36 @@ class FloatingService : Service(), TtsController.Listener {
             isClickable = true
             isFocusable = false
             layoutParams = LinearLayout.LayoutParams(dp(62), dp(42)).apply { marginStart = dp(4) }
+        }
+    }
+
+    private fun makeTextButton(label: String, fullWidth: Boolean = false, weight: Float = 0f): TextView {
+        return TextView(this).apply {
+            text = label
+            setTextColor(0xFFFFFFFF.toInt())
+            textSize = 14f
+            gravity = Gravity.CENTER
+            setBackgroundResource(R.drawable.bg_panel_button)
+            isClickable = true
+            isFocusable = false
+            val height = dp(42)
+            layoutParams = when {
+                weight > 0f -> LinearLayout.LayoutParams(0, height, weight).apply {
+                    topMargin = dp(4)
+                    marginStart = dp(4)
+                    marginEnd = dp(4)
+                }
+                fullWidth -> LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    height
+                ).apply {
+                    topMargin = dp(4)
+                    marginStart = dp(4)
+                    marginEnd = dp(4)
+                }
+                else -> LinearLayout.LayoutParams(dp(120), height).apply { marginStart = dp(4) }
+            }
+            setPadding(dp(10), 0, dp(10), 0)
         }
     }
 
@@ -421,15 +559,24 @@ class FloatingService : Service(), TtsController.Listener {
     override fun onState(state: TtsController.State) {
         handler.post {
             when (state) {
-                TtsController.State.SPEAKING, TtsController.State.PAUSED -> setPanelVisible(true)
-                TtsController.State.IDLE -> setPanelVisible(false)
+                TtsController.State.SPEAKING, TtsController.State.PAUSED -> {
+                    showMenu()
+                    updateMenuState()
+                }
+                TtsController.State.IDLE -> hideMenu()
             }
+        }
+    }
+
+    override fun onProgress(position: Int, total: Int) {
+        handler.post {
+            counterView?.text = "$position / $total"
         }
     }
 
     override fun onError(message: String?) {
         handler.post {
-            setPanelVisible(false)
+            hideMenu()
             if (!message.isNullOrBlank()) toast(message)
         }
     }

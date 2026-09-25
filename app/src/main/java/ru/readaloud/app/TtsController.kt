@@ -17,6 +17,7 @@ class TtsController(context: Context) {
     interface Listener {
         fun onState(state: State)
         fun onError(message: String?)
+        fun onProgress(position: Int, total: Int)
     }
 
     private val appContext = context.applicationContext
@@ -30,6 +31,8 @@ class TtsController(context: Context) {
     private var chunks: MutableList<String> = mutableListOf()
     private var index = 0
     private var paused = false
+    private var sequence = 0
+    private var activeId = ""
 
     var speed: Float = 1.0f
         set(value) {
@@ -76,8 +79,10 @@ class TtsController(context: Context) {
         override fun onStart(utteranceId: String?) {}
 
         override fun onDone(utteranceId: String?) {
+            if (utteranceId != activeId) return
             if (paused) return
             index++
+            prefs.lastIndex = index
             if (index < chunks.size) speakCurrent() else finish()
         }
 
@@ -85,6 +90,7 @@ class TtsController(context: Context) {
 
         @Deprecated("Deprecated in Java")
         override fun onError(utteranceId: String?) {
+            if (utteranceId != activeId) return
             listener?.onError("Playback error")
             finish()
         }
@@ -189,7 +195,7 @@ class TtsController(context: Context) {
         }
     }
 
-    fun speak(text: String) {
+    fun speak(text: String, startIndex: Int = 0) {
         refreshEngineIfNeeded()
         val clean = text.trim()
         if (clean.isEmpty()) {
@@ -201,10 +207,41 @@ class TtsController(context: Context) {
             return
         }
         chunks = split(clean).toMutableList()
-        index = 0
+        index = startIndex.coerceIn(0, (chunks.size - 1).coerceAtLeast(0))
+        paused = false
+        prefs.lastText = clean
+        prefs.lastIndex = index
+        setState(State.SPEAKING)
+        speakCurrent()
+    }
+
+    fun jumpBy(delta: Int) {
+        if (chunks.isEmpty()) return
+        index = (index + delta).coerceIn(0, chunks.size - 1)
+        paused = false
+        prefs.lastIndex = index
+        setState(State.SPEAKING)
+        speakCurrent()
+    }
+
+    fun repeatCurrent() {
+        if (chunks.isEmpty()) return
         paused = false
         setState(State.SPEAKING)
         speakCurrent()
+    }
+
+    fun positionLabel(): String {
+        if (chunks.isEmpty()) return ""
+        return "${index + 1} / ${chunks.size}"
+    }
+
+    fun canResume(): Boolean = prefs.lastText.isNotBlank()
+
+    fun resumeLast() {
+        val text = prefs.lastText
+        if (text.isBlank()) return
+        speak(text, prefs.lastIndex)
     }
 
     private fun speakCurrent() {
@@ -213,7 +250,10 @@ class TtsController(context: Context) {
             finish()
             return
         }
-        engine.speak(chunks[index], TextToSpeech.QUEUE_FLUSH, Bundle(), UTTERANCE_ID)
+        listener?.onProgress(index + 1, chunks.size)
+        sequence++
+        activeId = "$UTTERANCE_ID-$sequence"
+        engine.speak(chunks[index], TextToSpeech.QUEUE_FLUSH, Bundle(), activeId)
     }
 
     fun pause() {
@@ -234,6 +274,7 @@ class TtsController(context: Context) {
         paused = false
         chunks = mutableListOf()
         index = 0
+        activeId = ""
         try {
             tts?.stop()
         } catch (_: Exception) {
@@ -259,6 +300,8 @@ class TtsController(context: Context) {
         paused = false
         index = 0
         chunks = mutableListOf()
+        prefs.lastIndex = 0
+        activeId = ""
         setState(State.IDLE)
     }
 
