@@ -54,4 +54,5 @@
     <string name="cd_settings">অ্যাপ সেটিংস</string>
     <string name="cd_close">বন্ধ করুন</string>
 
+    <string name="err_generic">প্লেব্যাক ত্রুটি</string>
 </resources>

@@ -54,4 +54,5 @@
     <string name="cd_settings">Impostazioni app</string>
     <string name="cd_close">Chiudi</string>
 
+    <string name="err_generic">Errore di riproduzione</string>
 </resources>

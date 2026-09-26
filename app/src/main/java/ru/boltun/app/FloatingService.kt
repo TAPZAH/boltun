@@ -5,7 +5,6 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.Service
-import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ServiceInfo
@@ -357,26 +356,12 @@ class FloatingService : Service(), TtsController.Listener {
             toast(getString(R.string.toast_a11y_needed))
             return
         }
-        val text = service.captureText() ?: readClipboard()
+        val text = service.captureText()
         if (text.isNullOrBlank()) {
             toast(getString(R.string.toast_no_selection))
             return
         }
         tts.speak(text)
-    }
-
-    private fun readClipboard(): String? {
-        return try {
-            val manager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-            val clip = manager.primaryClip
-            if (clip != null && clip.itemCount > 0) {
-                clip.getItemAt(0).coerceToText(this).toString().trim().ifBlank { null }
-            } else {
-                null
-            }
-        } catch (_: Exception) {
-            null
-        }
     }
 
     private fun cycleSpeed() {
@@ -536,7 +521,7 @@ class FloatingService : Service(), TtsController.Listener {
     override fun onError(message: String?) {
         handler.post {
             hideMenu()
-            if (!message.isNullOrBlank()) toast(message)
+            toast(getString(R.string.err_generic))
         }
     }
 

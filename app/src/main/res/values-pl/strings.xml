@@ -54,4 +54,5 @@
     <string name="cd_settings">Ustawienia aplikacji</string>
     <string name="cd_close">Zamknij</string>
 
+    <string name="err_generic">Błąd odtwarzania</string>
 </resources>

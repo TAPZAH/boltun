@@ -52,7 +52,7 @@ class TtsController(context: Context) {
         if (status == TextToSpeech.SUCCESS) {
             val engine = tts
             if (engine == null) {
-                listener?.onError("TTS unavailable")
+                listener?.onError(null)
                 return@OnInitListener
             }
             val result = engine.setLanguage(Locale.getDefault())
@@ -72,7 +72,7 @@ class TtsController(context: Context) {
             createEngine(null)
         } else {
             setState(State.IDLE)
-            listener?.onError("TTS initialization failed")
+            listener?.onError(null)
         }
     }
 
@@ -92,7 +92,7 @@ class TtsController(context: Context) {
         @Deprecated("Deprecated in Java")
         override fun onError(utteranceId: String?) {
             if (utteranceId != activeId) return
-            listener?.onError("Playback error")
+            listener?.onError(null)
             finish()
         }
     }
