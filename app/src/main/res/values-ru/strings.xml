@@ -49,13 +49,9 @@
     <string name="cd_bubble">Озвучить</string>
     <string name="cd_prev">Предыдущее предложение</string>
     <string name="cd_next">Следующее предложение</string>
-    <string name="cd_repeat">Повторить предложение</string>
     <string name="cd_replay">Переиграть с начала</string>
     <string name="cd_resume">Продолжить с места</string>
     <string name="cd_settings">Приложение и настройки</string>
     <string name="cd_close">Закрыть</string>
 
-    <string name="menu_resume">Продолжить с места</string>
-    <string name="menu_app">Приложение</string>
-    <string name="menu_close">Закрыть</string>
 </resources>

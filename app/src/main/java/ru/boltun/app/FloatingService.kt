@@ -67,7 +67,6 @@ class FloatingService : Service(), TtsController.Listener {
             ACTION_SPEAK -> {
                 startInForeground()
                 if (bubbleView == null) attachOverlay()
-                isRunning = true
                 val text = intent.getStringExtra(EXTRA_TEXT)
                 if (!text.isNullOrBlank()) tts.speak(text)
                 return START_STICKY
@@ -76,12 +75,10 @@ class FloatingService : Service(), TtsController.Listener {
         startInForeground()
         if (bubbleView == null) attachOverlay()
         prefs.enabled = true
-        isRunning = true
         return START_STICKY
     }
 
     override fun onDestroy() {
-        isRunning = false
         bubbleView?.let { removeWindow(it) }
         menuView?.let { removeWindow(it) }
         bubbleView = null
@@ -554,10 +551,6 @@ class FloatingService : Service(), TtsController.Listener {
         private const val BUBBLE_DP = 52
 
         private val SPEEDS = listOf(0.75f, 0.9f, 1.0f, 1.1f, 1.25f, 1.5f, 2.0f)
-
-        @Volatile
-        var isRunning = false
-            private set
 
         fun start(context: Context) {
             val intent = Intent(context, FloatingService::class.java).setAction(ACTION_START)

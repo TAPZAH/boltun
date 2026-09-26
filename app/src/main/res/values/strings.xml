@@ -49,13 +49,9 @@
     <string name="cd_bubble">Read aloud</string>
     <string name="cd_prev">Previous sentence</string>
     <string name="cd_next">Next sentence</string>
-    <string name="cd_repeat">Repeat sentence</string>
     <string name="cd_replay">Replay from start</string>
     <string name="cd_resume">Continue where left off</string>
     <string name="cd_settings">App settings</string>
     <string name="cd_close">Close</string>
 
-    <string name="menu_resume">Continue where left off</string>
-    <string name="menu_app">Open app</string>
-    <string name="menu_close">Close</string>
 </resources>

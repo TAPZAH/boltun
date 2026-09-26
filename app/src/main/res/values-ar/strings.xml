@@ -49,13 +49,9 @@
     <string name="cd_bubble">القراءة بصوت عالٍ</string>
     <string name="cd_prev">الجملة السابقة</string>
     <string name="cd_next">الجملة التالية</string>
-    <string name="cd_repeat">تكرار الجملة</string>
     <string name="cd_replay">إعادة من البداية</string>
     <string name="cd_resume">المتابعة من حيث توقفت</string>
     <string name="cd_settings">إعدادات التطبيق</string>
     <string name="cd_close">إغلاق</string>
 
-    <string name="menu_resume">المتابعة من حيث توقفت</string>
-    <string name="menu_app">فتح التطبيق</string>
-    <string name="menu_close">إغلاق</string>
 </resources>

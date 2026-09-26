@@ -49,13 +49,9 @@
     <string name="cd_bubble">Baca dengan lantang</string>
     <string name="cd_prev">Kalimat sebelumnya</string>
     <string name="cd_next">Kalimat berikutnya</string>
-    <string name="cd_repeat">Ulangi kalimat</string>
     <string name="cd_replay">Putar dari awal</string>
     <string name="cd_resume">Lanjutkan dari tempat terakhir</string>
     <string name="cd_settings">Pengaturan aplikasi</string>
     <string name="cd_close">Tutup</string>
 
-    <string name="menu_resume">Lanjutkan dari tempat terakhir</string>
-    <string name="menu_app">Buka aplikasi</string>
-    <string name="menu_close">Tutup</string>
 </resources>

@@ -49,13 +49,9 @@
     <string name="cd_bubble">Vorlesen</string>
     <string name="cd_prev">Vorheriger Satz</string>
     <string name="cd_next">Nächster Satz</string>
-    <string name="cd_repeat">Satz wiederholen</string>
     <string name="cd_replay">Von Anfang an wiederholen</string>
     <string name="cd_resume">Dort fortsetzen, wo aufgehört wurde</string>
     <string name="cd_settings">App-Einstellungen</string>
     <string name="cd_close">Schließen</string>
 
-    <string name="menu_resume">Weiter, wo aufgehört wurde</string>
-    <string name="menu_app">App öffnen</string>
-    <string name="menu_close">Schließen</string>
 </resources>

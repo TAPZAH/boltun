@@ -49,13 +49,9 @@
     <string name="cd_bubble">Sesli oku</string>
     <string name="cd_prev">Önceki cümle</string>
     <string name="cd_next">Sonraki cümle</string>
-    <string name="cd_repeat">Cümleyi yinele</string>
     <string name="cd_replay">Baştan oynat</string>
     <string name="cd_resume">Kaldığın yerden devam et</string>
     <string name="cd_settings">Uygulama ayarları</string>
     <string name="cd_close">Kapat</string>
 
-    <string name="menu_resume">Kaldığın yerden devam et</string>
-    <string name="menu_app">Uygulamayı aç</string>
-    <string name="menu_close">Kapat</string>
 </resources>

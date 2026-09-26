@@ -199,10 +199,7 @@ class TtsController(context: Context) {
     fun speak(text: String, startIndex: Int = 0) {
         refreshEngineIfNeeded()
         val clean = text.trim()
-        if (clean.isEmpty()) {
-            listener?.onError("empty")
-            return
-        }
+        if (clean.isEmpty()) return
         pendingStart = startIndex
         if (!ready) {
             pendingText = clean
@@ -230,13 +227,6 @@ class TtsController(context: Context) {
         speakCurrent()
     }
 
-    fun repeatCurrent() {
-        if (chunks.isEmpty()) return
-        paused = false
-        setState(State.SPEAKING)
-        speakCurrent()
-    }
-
     fun replay() {
         val text = prefs.lastText
         if (text.isBlank()) return
@@ -247,8 +237,6 @@ class TtsController(context: Context) {
         if (chunks.isEmpty()) return ""
         return "${index + 1} / ${chunks.size}"
     }
-
-    fun canResume(): Boolean = prefs.lastText.isNotBlank()
 
     fun resumeLast() {
         val text = prefs.lastText

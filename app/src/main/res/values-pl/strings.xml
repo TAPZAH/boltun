@@ -49,13 +49,9 @@
     <string name="cd_bubble">Czytaj na głos</string>
     <string name="cd_prev">Poprzednie zdanie</string>
     <string name="cd_next">Następne zdanie</string>
-    <string name="cd_repeat">Powtórz zdanie</string>
     <string name="cd_replay">Odtwórz od początku</string>
     <string name="cd_resume">Kontynuuj od miejsca</string>
     <string name="cd_settings">Ustawienia aplikacji</string>
     <string name="cd_close">Zamknij</string>
 
-    <string name="menu_resume">Kontynuuj od miejsca</string>
-    <string name="menu_app">Otwórz aplikację</string>
-    <string name="menu_close">Zamknij</string>
 </resources>

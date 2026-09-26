@@ -49,13 +49,9 @@
     <string name="cd_bubble">Đọc to</string>
     <string name="cd_prev">Câu trước</string>
     <string name="cd_next">Câu sau</string>
-    <string name="cd_repeat">Lặp lại câu</string>
     <string name="cd_replay">Phát lại từ đầu</string>
     <string name="cd_resume">Tiếp tục từ chỗ đã dừng</string>
     <string name="cd_settings">Cài đặt ứng dụng</string>
     <string name="cd_close">Đóng</string>
 
-    <string name="menu_resume">Tiếp tục từ chỗ đã dừng</string>
-    <string name="menu_app">Mở ứng dụng</string>
-    <string name="menu_close">Đóng</string>
 </resources>

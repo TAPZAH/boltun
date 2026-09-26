@@ -49,13 +49,9 @@
     <string name="cd_bubble">ज़ोर से पढ़ें</string>
     <string name="cd_prev">पिछला वाक्य</string>
     <string name="cd_next">अगला वाक्य</string>
-    <string name="cd_repeat">वाक्य दोहराएँ</string>
     <string name="cd_replay">शुरू से चलाएँ</string>
     <string name="cd_resume">जहाँ छोड़ा था वहाँ से जारी रखें</string>
     <string name="cd_settings">ऐप सेटिंग्स</string>
     <string name="cd_close">बंद करें</string>
 
-    <string name="menu_resume">जहाँ छोड़ा था वहाँ से जारी रखें</string>
-    <string name="menu_app">ऐप खोलें</string>
-    <string name="menu_close">बंद करें</string>
 </resources>

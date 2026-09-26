@@ -49,13 +49,9 @@
     <string name="cd_bubble">بلند آواز میں پڑھیں</string>
     <string name="cd_prev">پچھلا جملہ</string>
     <string name="cd_next">اگلا جملہ</string>
-    <string name="cd_repeat">جملہ دہرائیں</string>
     <string name="cd_replay">شروع سے چلائیں</string>
     <string name="cd_resume">جہاں چھوڑا تھا وہاں سے جاری رکھیں</string>
     <string name="cd_settings">ایپ سیٹنگز</string>
     <string name="cd_close">بند کریں</string>
 
-    <string name="menu_resume">جہاں چھوڑا تھا وہاں سے جاری رکھیں</string>
-    <string name="menu_app">ایپ کھولیں</string>
-    <string name="menu_close">بند کریں</string>
 </resources>

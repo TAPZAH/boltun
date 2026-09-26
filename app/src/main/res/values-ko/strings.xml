@@ -49,13 +49,9 @@
     <string name="cd_bubble">소리 내어 읽기</string>
     <string name="cd_prev">이전 문장</string>
     <string name="cd_next">다음 문장</string>
-    <string name="cd_repeat">문장 반복</string>
     <string name="cd_replay">처음부터 재생</string>
     <string name="cd_resume">멈춘 곳에서 계속</string>
     <string name="cd_settings">앱 설정</string>
     <string name="cd_close">닫기</string>
 
-    <string name="menu_resume">멈춘 곳에서 계속</string>
-    <string name="menu_app">앱 열기</string>
-    <string name="menu_close">닫기</string>
 </resources>

@@ -49,13 +49,9 @@
     <string name="cd_bubble">朗读</string>
     <string name="cd_prev">上一句</string>
     <string name="cd_next">下一句</string>
-    <string name="cd_repeat">重复本句</string>
     <string name="cd_replay">从头重播</string>
     <string name="cd_resume">从上次位置继续</string>
     <string name="cd_settings">应用设置</string>
     <string name="cd_close">关闭</string>
 
-    <string name="menu_resume">从上次位置继续</string>
-    <string name="menu_app">打开应用</string>
-    <string name="menu_close">关闭</string>
 </resources>

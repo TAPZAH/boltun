@@ -49,13 +49,9 @@
     <string name="cd_bubble">Voorlezen</string>
     <string name="cd_prev">Vorige zin</string>
     <string name="cd_next">Volgende zin</string>
-    <string name="cd_repeat">Zin herhalen</string>
     <string name="cd_replay">Vanaf het begin opnieuw</string>
     <string name="cd_resume">Doorgaan waar je gebleven was</string>
     <string name="cd_settings">App-instellingen</string>
     <string name="cd_close">Sluiten</string>
 
-    <string name="menu_resume">Doorgaan waar je gebleven was</string>
-    <string name="menu_app">App openen</string>
-    <string name="menu_close">Sluiten</string>
 </resources>

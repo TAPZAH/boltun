@@ -49,13 +49,9 @@
     <string name="cd_bubble">読み上げ</string>
     <string name="cd_prev">前の文</string>
     <string name="cd_next">次の文</string>
-    <string name="cd_repeat">文を繰り返す</string>
     <string name="cd_replay">最初から再生</string>
     <string name="cd_resume">続きから再開</string>
     <string name="cd_settings">アプリ設定</string>
     <string name="cd_close">閉じる</string>
 
-    <string name="menu_resume">続きから再開</string>
-    <string name="menu_app">アプリを開く</string>
-    <string name="menu_close">閉じる</string>
 </resources>

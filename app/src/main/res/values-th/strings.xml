@@ -49,13 +49,9 @@
     <string name="cd_bubble">อ่านออกเสียง</string>
     <string name="cd_prev">ประโยคก่อนหน้า</string>
     <string name="cd_next">ประโยคถัดไป</string>
-    <string name="cd_repeat">ทำซ้ำประโยค</string>
     <string name="cd_replay">เล่นซ้ำตั้งแต่ต้น</string>
     <string name="cd_resume">เล่นต่อจากจุดที่หยุด</string>
     <string name="cd_settings">การตั้งค่าแอป</string>
     <string name="cd_close">ปิด</string>
 
-    <string name="menu_resume">เล่นต่อจากจุดที่หยุด</string>
-    <string name="menu_app">เปิดแอป</string>
-    <string name="menu_close">ปิด</string>
 </resources>

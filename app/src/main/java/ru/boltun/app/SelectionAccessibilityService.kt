@@ -235,7 +235,5 @@ class SelectionAccessibilityService : AccessibilityService() {
         @Volatile
         var lastSource: String = SOURCE_NONE
             private set
-
-        fun latestSelection(): String? = lastSelection
     }
 }

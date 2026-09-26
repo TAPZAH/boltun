@@ -49,13 +49,9 @@
     <string name="cd_bubble">Leggi ad alta voce</string>
     <string name="cd_prev">Frase precedente</string>
     <string name="cd_next">Frase successiva</string>
-    <string name="cd_repeat">Ripeti frase</string>
     <string name="cd_replay">Riproduci dall\'inizio</string>
     <string name="cd_resume">Continua da dove eri rimasto</string>
     <string name="cd_settings">Impostazioni app</string>
     <string name="cd_close">Chiudi</string>
 
-    <string name="menu_resume">Continua da dove eri rimasto</string>
-    <string name="menu_app">Apri app</string>
-    <string name="menu_close">Chiudi</string>
 </resources>
