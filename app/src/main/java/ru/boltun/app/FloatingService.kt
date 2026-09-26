@@ -41,7 +41,6 @@ class FloatingService : Service(), TtsController.Listener {
     private var bubbleParams: WindowManager.LayoutParams? = null
     private var menuParams: WindowManager.LayoutParams? = null
     private var counterView: TextView? = null
-    private var resumeButton: TextView? = null
     private var playPauseButton: ImageView? = null
     private var speedButton: TextView? = null
     private var menuAdded = false
@@ -90,7 +89,6 @@ class FloatingService : Service(), TtsController.Listener {
         bubbleParams = null
         menuParams = null
         counterView = null
-        resumeButton = null
         playPauseButton = null
         speedButton = null
         menuAdded = false
@@ -238,38 +236,22 @@ class FloatingService : Service(), TtsController.Listener {
         }
         counterView = counter
 
-        val navRow = LinearLayout(this).apply {
+        val transportRow = LinearLayout(this).apply {
             orientation = LinearLayout.HORIZONTAL
             gravity = Gravity.CENTER
         }
         val prev = makeIconButton(R.drawable.ic_prev, R.string.cd_prev)
-        val repeat = makeIconButton(R.drawable.ic_repeat, R.string.cd_repeat)
+        val playPause = makeIconButton(R.drawable.ic_play, R.string.cd_play)
+        val stop = makeIconButton(R.drawable.ic_stop, R.string.cd_stop)
         val next = makeIconButton(R.drawable.ic_next, R.string.cd_next)
+        val speed = makeSpeedButton()
+        playPauseButton = playPause
+        speedButton = speed
+
         prev.setOnClickListener {
             tts.jumpBy(-1)
             updateMenuState()
         }
-        repeat.setOnClickListener {
-            tts.repeatCurrent()
-            updateMenuState()
-        }
-        next.setOnClickListener {
-            tts.jumpBy(1)
-            updateMenuState()
-        }
-        navRow.addView(prev)
-        navRow.addView(repeat)
-        navRow.addView(next)
-
-        val playRow = LinearLayout(this).apply {
-            orientation = LinearLayout.HORIZONTAL
-            gravity = Gravity.CENTER
-        }
-        val playPause = makeIconButton(R.drawable.ic_play, R.string.cd_play)
-        val stop = makeIconButton(R.drawable.ic_stop, R.string.cd_stop)
-        val speed = makeSpeedButton()
-        playPauseButton = playPause
-        speedButton = speed
         playPause.setOnClickListener {
             togglePlayPause()
             updateMenuState()
@@ -278,37 +260,48 @@ class FloatingService : Service(), TtsController.Listener {
             tts.stop()
             hideMenu()
         }
+        next.setOnClickListener {
+            tts.jumpBy(1)
+            updateMenuState()
+        }
         speed.setOnClickListener { cycleSpeed() }
-        playRow.addView(playPause)
-        playRow.addView(stop)
-        playRow.addView(speed)
 
-        val resume = makeTextButton(getString(R.string.menu_resume), fullWidth = true)
-        resumeButton = resume
+        transportRow.addView(prev)
+        transportRow.addView(playPause)
+        transportRow.addView(stop)
+        transportRow.addView(next)
+        transportRow.addView(speed)
+
+        val actionRow = LinearLayout(this).apply {
+            orientation = LinearLayout.HORIZONTAL
+            gravity = Gravity.CENTER
+        }
+        val replay = makeIconButton(R.drawable.ic_replay, R.string.cd_replay)
+        val resume = makeIconButton(R.drawable.ic_resume, R.string.cd_resume)
+        val settings = makeIconButton(R.drawable.ic_settings, R.string.cd_settings)
+        val close = makeIconButton(R.drawable.ic_close, R.string.cd_close)
+        replay.setOnClickListener {
+            tts.replay()
+            updateMenuState()
+        }
         resume.setOnClickListener {
             tts.resumeLast()
             updateMenuState()
         }
-
-        val bottomRow = LinearLayout(this).apply {
-            orientation = LinearLayout.HORIZONTAL
-            gravity = Gravity.CENTER
-        }
-        val appButton = makeTextButton(getString(R.string.menu_app), weight = 1f)
-        val closeButton = makeTextButton(getString(R.string.menu_close), weight = 1f)
-        appButton.setOnClickListener {
+        settings.setOnClickListener {
             openApp()
             hideMenu()
         }
-        closeButton.setOnClickListener { hideMenu() }
-        bottomRow.addView(appButton)
-        bottomRow.addView(closeButton)
+        close.setOnClickListener { hideMenu() }
+
+        actionRow.addView(replay)
+        actionRow.addView(resume)
+        actionRow.addView(settings)
+        actionRow.addView(close)
 
         menu.addView(counter)
-        menu.addView(navRow)
-        menu.addView(playRow)
-        menu.addView(resume)
-        menu.addView(bottomRow)
+        menu.addView(transportRow)
+        menu.addView(actionRow)
         return menu
     }
 
@@ -426,7 +419,6 @@ class FloatingService : Service(), TtsController.Listener {
 
     private fun updateMenuState() {
         counterView?.text = tts.positionLabel()
-        resumeButton?.visibility = if (tts.canResume()) View.VISIBLE else View.GONE
         playPauseButton?.setImageResource(
             if (tts.state == TtsController.State.SPEAKING) R.drawable.ic_pause else R.drawable.ic_play
         )
@@ -489,37 +481,7 @@ class FloatingService : Service(), TtsController.Listener {
             setBackgroundResource(R.drawable.bg_panel_button)
             isClickable = true
             isFocusable = false
-            layoutParams = LinearLayout.LayoutParams(dp(62), dp(42)).apply { marginStart = dp(4) }
-        }
-    }
-
-    private fun makeTextButton(label: String, fullWidth: Boolean = false, weight: Float = 0f): TextView {
-        return TextView(this).apply {
-            text = label
-            setTextColor(0xFFFFFFFF.toInt())
-            textSize = 14f
-            gravity = Gravity.CENTER
-            setBackgroundResource(R.drawable.bg_panel_button)
-            isClickable = true
-            isFocusable = false
-            val height = dp(42)
-            layoutParams = when {
-                weight > 0f -> LinearLayout.LayoutParams(0, height, weight).apply {
-                    topMargin = dp(4)
-                    marginStart = dp(4)
-                    marginEnd = dp(4)
-                }
-                fullWidth -> LinearLayout.LayoutParams(
-                    LinearLayout.LayoutParams.MATCH_PARENT,
-                    height
-                ).apply {
-                    topMargin = dp(4)
-                    marginStart = dp(4)
-                    marginEnd = dp(4)
-                }
-                else -> LinearLayout.LayoutParams(dp(120), height).apply { marginStart = dp(4) }
-            }
-            setPadding(dp(10), 0, dp(10), 0)
+            layoutParams = LinearLayout.LayoutParams(dp(64), dp(42)).apply { marginStart = dp(4) }
         }
     }
 
@@ -591,7 +553,7 @@ class FloatingService : Service(), TtsController.Listener {
         private const val NOTIFICATION_ID = 1
         private const val BUBBLE_DP = 52
 
-        private val SPEEDS = listOf(0.75f, 1.0f, 1.25f, 1.5f, 2.0f)
+        private val SPEEDS = listOf(0.75f, 0.9f, 1.0f, 1.1f, 1.25f, 1.5f, 2.0f)
 
         @Volatile
         var isRunning = false

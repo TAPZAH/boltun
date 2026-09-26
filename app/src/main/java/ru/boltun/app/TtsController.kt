@@ -25,6 +25,7 @@ class TtsController(context: Context) {
     private var tts: TextToSpeech? = null
     private var ready = false
     private var pendingText: String? = null
+    private var pendingStart = 0
     private var engineId: String? = null
     private var triedFallback = false
 
@@ -64,7 +65,7 @@ class TtsController(context: Context) {
             onReady?.invoke()
             val queued = pendingText
             pendingText = null
-            if (queued != null) speak(queued)
+            if (queued != null) speak(queued, pendingStart)
         } else if (!triedFallback) {
             triedFallback = true
             engineId = null
@@ -202,10 +203,15 @@ class TtsController(context: Context) {
             listener?.onError("empty")
             return
         }
+        pendingStart = startIndex
         if (!ready) {
             pendingText = clean
             return
         }
+        startPlayback(clean, startIndex)
+    }
+
+    private fun startPlayback(clean: String, startIndex: Int) {
         chunks = split(clean).toMutableList()
         index = startIndex.coerceIn(0, (chunks.size - 1).coerceAtLeast(0))
         paused = false
@@ -229,6 +235,12 @@ class TtsController(context: Context) {
         paused = false
         setState(State.SPEAKING)
         speakCurrent()
+    }
+
+    fun replay() {
+        val text = prefs.lastText
+        if (text.isBlank()) return
+        speak(text, 0)
     }
 
     fun positionLabel(): String {
@@ -259,6 +271,7 @@ class TtsController(context: Context) {
     fun pause() {
         if (state != State.SPEAKING) return
         paused = true
+        if (chunks.isNotEmpty()) prefs.lastIndex = index
         tts?.stop()
         setState(State.PAUSED)
     }
@@ -272,6 +285,7 @@ class TtsController(context: Context) {
 
     fun stop() {
         paused = false
+        if (chunks.isNotEmpty()) prefs.lastIndex = index
         chunks = mutableListOf()
         index = 0
         activeId = ""

@@ -3,6 +3,8 @@
 Android-приложение: озвучивает **выделенный текст** по нажатию плавающей кнопки поверх других приложений.
 Референс поведения — T2S, но здесь выделение захватывается напрямую (без ручного «Копировать»).
 
+Автор: **Tar3ah**
+
 ## Возможности
 
 - Плавающая перетаскиваемая кнопка поверх любых приложений.
@@ -121,15 +123,35 @@ app/src/main/java/ru/boltun/app/
 Boltun распространяется под лицензией **GNU General Public License v3.0**.
 Полный текст — в файле [LICENSE](LICENSE).
 
-Copyright (C) 2026 Boltun contributors.
+Copyright (C) 2026 Tar3ah.
 
 ## Публикация на GitHub
 
 ```bash
-git remote add origin https://github.com/<user>/boltun.git
+git remote add origin https://github.com/TAPZAH/boltun.git
 git branch -M main
 git push -u origin main
 ```
 
 Релиз: соберите `assembleRelease`/`bundleRelease` и приложите APK/AAB к GitHub Release.
 Ключ подписи (`keystore/`) и `keystore.properties` намеренно исключены из репозитория.
+
+## CI/CD (GitHub Actions)
+
+- `.github/workflows/build.yml` — на push в `main`, pull request и вручную собирает debug APK и прикладывает артефакт.
+- `.github/workflows/release.yml` — на тег `v*` (или вручную) собирает APK/AAB и публикует GitHub Release.
+
+Для подписанного релиза добавьте в **Settings → Secrets and variables → Actions**:
+
+- `KEYSTORE_BASE64` — keystore в base64: `base64 -w0 keystore/boltun.jks`
+- `KEYSTORE_PASSWORD`, `KEY_ALIAS`, `KEY_PASSWORD`
+
+Если секреты не заданы, release-сборка пройдёт, но APK будет неподписанным.
+
+Выпуск релиза:
+
+```bash
+git tag v1.0
+git push origin v1.0
+```
+

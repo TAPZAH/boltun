@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Болтун</string>
+    <string name="app_author">Автор: Tar3ah</string>
     <string name="a11y_description">Дозволяє «Болтуну» зчитувати виділений у будь-якому застосунку текст і промовляти його вголос.</string>
 
     <string name="notif_channel_name">Відтворення</string>
@@ -49,6 +50,10 @@
     <string name="cd_prev">Попереднє речення</string>
     <string name="cd_next">Наступне речення</string>
     <string name="cd_repeat">Повторити речення</string>
+    <string name="cd_replay">Відтворити спочатку</string>
+    <string name="cd_resume">Продовжити з місця</string>
+    <string name="cd_settings">Застосунок і налаштування</string>
+    <string name="cd_close">Закрити</string>
 
     <string name="menu_resume">Продовжити з місця</string>
     <string name="menu_app">Застосунок</string>
