@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Boltun</string>
+    <string name="app_author">作者: Tar3ah</string>
+    <string name="a11y_description">Boltun が任意のアプリで選択したテキストを取得して読み上げることを許可します。</string>
+
+    <string name="notif_channel_name">再生</string>
+    <string name="notif_title">Boltun は有効です</string>
+    <string name="notif_text">フローティングボタンをタップして選択テキストを読み上げます</string>
+    <string name="notif_stop">停止</string>
+
+    <string name="btn_overlay">1. 他のアプリの上に表示を許可</string>
+    <string name="btn_a11y">2. ユーザー補助サービスを有効化</string>
+    <string name="btn_notif">3. 通知を許可</string>
+    <string name="btn_start">フローティングボタンを表示</string>
+    <string name="btn_stop">フローティングボタンを非表示</string>
+    <string name="btn_battery">バッテリー最適化を無効化</string>
+    <string name="btn_tts_settings">既定の音声エンジン</string>
+    <string name="btn_pick_engine">音声エンジンを選択</string>
+    <string name="engine_pick_title">音声エンジン</string>
+    <string name="engine_system_option">システム既定</string>
+    <string name="engine_none">音声エンジンがインストールされていません</string>
+    <string name="engine_disabled">無効</string>
+    <string name="engine_enable_hint">システムの音声合成設定でこのエンジンを有効にしてください</string>
+    <string name="engine_label">音声エンジン: %1$s</string>
+    <string name="btn_test">音声をテスト</string>
+    <string name="btn_probe">選択の取得を確認</string>
+    <string name="probe_ok">%1$d 文字を取得 [%2$s]:\n%3$s</string>
+    <string name="probe_empty">何も取得できませんでした（選択もクリップボードもなし）</string>
+
+    <string name="speed_label">速度: %1$.2f×</string>
+    <string name="status">状態</string>
+    <string name="status_overlay_on">オーバーレイ: 許可</string>
+    <string name="status_overlay_off">オーバーレイ: 未許可</string>
+    <string name="status_a11y_on">ユーザー補助: オン</string>
+    <string name="status_a11y_off">ユーザー補助: オフ</string>
+    <string name="status_notif_on">通知: 許可</string>
+    <string name="status_notif_off">通知: 未許可</string>
+    <string name="hint">任意のアプリでテキストを選択し、フローティングボタンをタップします。</string>
+    <string name="test_phrase">Boltun の準備ができました。任意のテキストを選択してボタンをタップしてください。</string>
+
+    <string name="toast_no_selection">何も選択されていません。テキストを選択またはコピーして再度タップしてください。</string>
+    <string name="toast_no_overlay">先に他のアプリの上に表示を許可してください</string>
+    <string name="toast_a11y_needed">先にユーザー補助サービスを有効にしてください</string>
+
+    <string name="cd_play">再生</string>
+    <string name="cd_pause">一時停止</string>
+    <string name="cd_stop">停止</string>
+    <string name="cd_speed">速度</string>
+    <string name="cd_bubble">読み上げ</string>
+    <string name="cd_prev">前の文</string>
+    <string name="cd_next">次の文</string>
+    <string name="cd_repeat">文を繰り返す</string>
+    <string name="cd_replay">最初から再生</string>
+    <string name="cd_resume">続きから再開</string>
+    <string name="cd_settings">アプリ設定</string>
+    <string name="cd_close">閉じる</string>
+
+    <string name="menu_resume">続きから再開</string>
+    <string name="menu_app">アプリを開く</string>
+    <string name="menu_close">閉じる</string>
+</resources>

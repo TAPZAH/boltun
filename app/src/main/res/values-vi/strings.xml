@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Boltun</string>
+    <string name="app_author">Tác giả: Tar3ah</string>
+    <string name="a11y_description">Cho phép Boltun lấy văn bản bạn chọn trong bất kỳ ứng dụng nào và đọc to.</string>
+
+    <string name="notif_channel_name">Phát lại</string>
+    <string name="notif_title">Boltun đang hoạt động</string>
+    <string name="notif_text">Chạm nút nổi để đọc văn bản đã chọn</string>
+    <string name="notif_stop">Dừng</string>
+
+    <string name="btn_overlay">1. Cho phép hiển thị trên các ứng dụng khác</string>
+    <string name="btn_a11y">2. Bật dịch vụ trợ năng</string>
+    <string name="btn_notif">3. Cho phép thông báo</string>
+    <string name="btn_start">Hiện nút nổi</string>
+    <string name="btn_stop">Ẩn nút nổi</string>
+    <string name="btn_battery">Tắt tối ưu hóa pin</string>
+    <string name="btn_tts_settings">Công cụ giọng nói mặc định</string>
+    <string name="btn_pick_engine">Chọn công cụ giọng nói</string>
+    <string name="engine_pick_title">Công cụ giọng nói</string>
+    <string name="engine_system_option">Mặc định hệ thống</string>
+    <string name="engine_none">Chưa cài công cụ giọng nói</string>
+    <string name="engine_disabled">đã tắt</string>
+    <string name="engine_enable_hint">Bật công cụ này trong cài đặt chuyển văn bản thành giọng nói của hệ thống</string>
+    <string name="engine_label">Công cụ giọng nói: %1$s</string>
+    <string name="btn_test">Thử giọng nói</string>
+    <string name="btn_probe">Kiểm tra bắt chọn</string>
+    <string name="probe_ok">Đã bắt %1$d ký tự [%2$s]:\n%3$s</string>
+    <string name="probe_empty">Không bắt được gì (không có lựa chọn và clipboard)</string>
+
+    <string name="speed_label">Tốc độ: %1$.2f×</string>
+    <string name="status">Trạng thái</string>
+    <string name="status_overlay_on">Lớp phủ: được phép</string>
+    <string name="status_overlay_off">Lớp phủ: không được phép</string>
+    <string name="status_a11y_on">Trợ năng: bật</string>
+    <string name="status_a11y_off">Trợ năng: tắt</string>
+    <string name="status_notif_on">Thông báo: được phép</string>
+    <string name="status_notif_off">Thông báo: không được phép</string>
+    <string name="hint">Chọn văn bản trong bất kỳ ứng dụng nào, rồi chạm nút nổi.</string>
+    <string name="test_phrase">Boltun đã sẵn sàng. Chọn văn bản bất kỳ và chạm nút.</string>
+
+    <string name="toast_no_selection">Chưa chọn gì. Hãy chọn hoặc sao chép văn bản rồi chạm lại.</string>
+    <string name="toast_no_overlay">Trước tiên hãy cho phép hiển thị trên các ứng dụng khác</string>
+    <string name="toast_a11y_needed">Trước tiên hãy bật dịch vụ trợ năng</string>
+
+    <string name="cd_play">Phát</string>
+    <string name="cd_pause">Tạm dừng</string>
+    <string name="cd_stop">Dừng</string>
+    <string name="cd_speed">Tốc độ</string>
+    <string name="cd_bubble">Đọc to</string>
+    <string name="cd_prev">Câu trước</string>
+    <string name="cd_next">Câu sau</string>
+    <string name="cd_repeat">Lặp lại câu</string>
+    <string name="cd_replay">Phát lại từ đầu</string>
+    <string name="cd_resume">Tiếp tục từ chỗ đã dừng</string>
+    <string name="cd_settings">Cài đặt ứng dụng</string>
+    <string name="cd_close">Đóng</string>
+
+    <string name="menu_resume">Tiếp tục từ chỗ đã dừng</string>
+    <string name="menu_app">Mở ứng dụng</string>
+    <string name="menu_close">Đóng</string>
+</resources>

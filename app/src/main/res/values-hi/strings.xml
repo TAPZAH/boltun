@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Boltun</string>
+    <string name="app_author">लेखक: Tar3ah</string>
+    <string name="a11y_description">Boltun को किसी भी ऐप में चुने गए टेक्स्ट को पकड़कर ज़ोर से पढ़ने की अनुमति देता है।</string>
+
+    <string name="notif_channel_name">प्लेबैक</string>
+    <string name="notif_title">Boltun सक्रिय है</string>
+    <string name="notif_text">चुना गया टेक्स्ट पढ़ने के लिए फ़्लोटिंग बटन दबाएँ</string>
+    <string name="notif_stop">रोकें</string>
+
+    <string name="btn_overlay">1. अन्य ऐप्स के ऊपर दिखाने की अनुमति दें</string>
+    <string name="btn_a11y">2. एक्सेसिबिलिटी सेवा चालू करें</string>
+    <string name="btn_notif">3. सूचनाओं की अनुमति दें</string>
+    <string name="btn_start">फ़्लोटिंग बटन दिखाएँ</string>
+    <string name="btn_stop">फ़्लोटिंग बटन छिपाएँ</string>
+    <string name="btn_battery">बैटरी ऑप्टिमाइज़ेशन बंद करें</string>
+    <string name="btn_tts_settings">डिफ़ॉल्ट स्पीच इंजन</string>
+    <string name="btn_pick_engine">स्पीच इंजन चुनें</string>
+    <string name="engine_pick_title">स्पीच इंजन</string>
+    <string name="engine_system_option">सिस्टम डिफ़ॉल्ट</string>
+    <string name="engine_none">कोई स्पीच इंजन इंस्टॉल नहीं</string>
+    <string name="engine_disabled">बंद</string>
+    <string name="engine_enable_hint">इस इंजन को सिस्टम टेक्स्ट-टू-स्पीच सेटिंग्स में चालू करें</string>
+    <string name="engine_label">स्पीच इंजन: %1$s</string>
+    <string name="btn_test">आवाज़ जाँचें</string>
+    <string name="btn_probe">चयन कैप्चर जाँचें</string>
+    <string name="probe_ok">%1$d अक्षर कैप्चर हुए [%2$s]:\n%3$s</string>
+    <string name="probe_empty">कुछ कैप्चर नहीं हुआ (न चयन न क्लिपबोर्ड)</string>
+
+    <string name="speed_label">गति: %1$.2f×</string>
+    <string name="status">स्थिति</string>
+    <string name="status_overlay_on">ओवरले: अनुमत</string>
+    <string name="status_overlay_off">ओवरले: अनुमत नहीं</string>
+    <string name="status_a11y_on">एक्सेसिबिलिटी: चालू</string>
+    <string name="status_a11y_off">एक्सेसिबिलिटी: बंद</string>
+    <string name="status_notif_on">सूचनाएँ: अनुमत</string>
+    <string name="status_notif_off">सूचनाएँ: अनुमत नहीं</string>
+    <string name="hint">किसी भी ऐप में टेक्स्ट चुनें, फिर फ़्लोटिंग बटन दबाएँ।</string>
+    <string name="test_phrase">Boltun तैयार है। कोई भी टेक्स्ट चुनें और बटन दबाएँ।</string>
+
+    <string name="toast_no_selection">कुछ चुना नहीं गया। टेक्स्ट चुनें या कॉपी करें, फिर दोबारा दबाएँ।</string>
+    <string name="toast_no_overlay">पहले अन्य ऐप्स के ऊपर दिखाने की अनुमति दें</string>
+    <string name="toast_a11y_needed">पहले एक्सेसिबिलिटी सेवा चालू करें</string>
+
+    <string name="cd_play">चलाएँ</string>
+    <string name="cd_pause">रोकें</string>
+    <string name="cd_stop">रोकें</string>
+    <string name="cd_speed">गति</string>
+    <string name="cd_bubble">ज़ोर से पढ़ें</string>
+    <string name="cd_prev">पिछला वाक्य</string>
+    <string name="cd_next">अगला वाक्य</string>
+    <string name="cd_repeat">वाक्य दोहराएँ</string>
+    <string name="cd_replay">शुरू से चलाएँ</string>
+    <string name="cd_resume">जहाँ छोड़ा था वहाँ से जारी रखें</string>
+    <string name="cd_settings">ऐप सेटिंग्स</string>
+    <string name="cd_close">बंद करें</string>
+
+    <string name="menu_resume">जहाँ छोड़ा था वहाँ से जारी रखें</string>
+    <string name="menu_app">ऐप खोलें</string>
+    <string name="menu_close">बंद करें</string>
+</resources>

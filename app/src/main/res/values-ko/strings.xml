@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Boltun</string>
+    <string name="app_author">작성자: Tar3ah</string>
+    <string name="a11y_description">Boltun이 모든 앱에서 선택한 텍스트를 캡처해 소리 내어 읽도록 허용합니다.</string>
+
+    <string name="notif_channel_name">재생</string>
+    <string name="notif_title">Boltun이 활성화됨</string>
+    <string name="notif_text">선택한 텍스트를 읽으려면 떠 있는 버튼을 탭하세요</string>
+    <string name="notif_stop">중지</string>
+
+    <string name="btn_overlay">1. 다른 앱 위에 표시 허용</string>
+    <string name="btn_a11y">2. 접근성 서비스 사용 설정</string>
+    <string name="btn_notif">3. 알림 허용</string>
+    <string name="btn_start">떠 있는 버튼 표시</string>
+    <string name="btn_stop">떠 있는 버튼 숨기기</string>
+    <string name="btn_battery">배터리 최적화 사용 안 함</string>
+    <string name="btn_tts_settings">기본 음성 엔진</string>
+    <string name="btn_pick_engine">음성 엔진 선택</string>
+    <string name="engine_pick_title">음성 엔진</string>
+    <string name="engine_system_option">시스템 기본</string>
+    <string name="engine_none">설치된 음성 엔진 없음</string>
+    <string name="engine_disabled">사용 안 함</string>
+    <string name="engine_enable_hint">시스템 텍스트 음성 변환 설정에서 이 엔진을 사용 설정하세요</string>
+    <string name="engine_label">음성 엔진: %1$s</string>
+    <string name="btn_test">음성 테스트</string>
+    <string name="btn_probe">선택 캡처 확인</string>
+    <string name="probe_ok">%1$d자 캡처됨 [%2$s]:\n%3$s</string>
+    <string name="probe_empty">아무것도 캡처되지 않음(선택 및 클립보드 없음)</string>
+
+    <string name="speed_label">속도: %1$.2f×</string>
+    <string name="status">상태</string>
+    <string name="status_overlay_on">오버레이: 허용됨</string>
+    <string name="status_overlay_off">오버레이: 허용되지 않음</string>
+    <string name="status_a11y_on">접근성: 켜짐</string>
+    <string name="status_a11y_off">접근성: 꺼짐</string>
+    <string name="status_notif_on">알림: 허용됨</string>
+    <string name="status_notif_off">알림: 허용되지 않음</string>
+    <string name="hint">모든 앱에서 텍스트를 선택한 다음 떠 있는 버튼을 탭하세요.</string>
+    <string name="test_phrase">Boltun이 준비되었습니다. 아무 텍스트나 선택하고 버튼을 탭하세요.</string>
+
+    <string name="toast_no_selection">선택된 항목이 없습니다. 텍스트를 선택하거나 복사한 뒤 다시 탭하세요.</string>
+    <string name="toast_no_overlay">먼저 다른 앱 위에 표시를 허용하세요</string>
+    <string name="toast_a11y_needed">먼저 접근성 서비스를 사용 설정하세요</string>
+
+    <string name="cd_play">재생</string>
+    <string name="cd_pause">일시중지</string>
+    <string name="cd_stop">중지</string>
+    <string name="cd_speed">속도</string>
+    <string name="cd_bubble">소리 내어 읽기</string>
+    <string name="cd_prev">이전 문장</string>
+    <string name="cd_next">다음 문장</string>
+    <string name="cd_repeat">문장 반복</string>
+    <string name="cd_replay">처음부터 재생</string>
+    <string name="cd_resume">멈춘 곳에서 계속</string>
+    <string name="cd_settings">앱 설정</string>
+    <string name="cd_close">닫기</string>
+
+    <string name="menu_resume">멈춘 곳에서 계속</string>
+    <string name="menu_app">앱 열기</string>
+    <string name="menu_close">닫기</string>
+</resources>

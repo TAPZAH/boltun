@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Boltun</string>
+    <string name="app_author">Auteur: Tar3ah</string>
+    <string name="a11y_description">Hiermee kan Boltun de geselecteerde tekst in elke app vastleggen en voorlezen.</string>
+
+    <string name="notif_channel_name">Afspelen</string>
+    <string name="notif_title">Boltun is actief</string>
+    <string name="notif_text">Tik op de zwevende knop om de geselecteerde tekst voor te lezen</string>
+    <string name="notif_stop">Stop</string>
+
+    <string name="btn_overlay">1. Weergave over andere apps toestaan</string>
+    <string name="btn_a11y">2. Toegankelijkheidsservice inschakelen</string>
+    <string name="btn_notif">3. Meldingen toestaan</string>
+    <string name="btn_start">Zwevende knop tonen</string>
+    <string name="btn_stop">Zwevende knop verbergen</string>
+    <string name="btn_battery">Batterijoptimalisatie uitschakelen</string>
+    <string name="btn_tts_settings">Standaard spraakengine</string>
+    <string name="btn_pick_engine">Spraakengine kiezen</string>
+    <string name="engine_pick_title">Spraakengine</string>
+    <string name="engine_system_option">Systeemstandaard</string>
+    <string name="engine_none">Geen spraakengines geïnstalleerd</string>
+    <string name="engine_disabled">uitgeschakeld</string>
+    <string name="engine_enable_hint">Schakel deze engine in bij de systeeminstellingen voor tekst-naar-spraak</string>
+    <string name="engine_label">Spraakengine: %1$s</string>
+    <string name="btn_test">Stem testen</string>
+    <string name="btn_probe">Selectie-opname controleren</string>
+    <string name="probe_ok">%1$d tekens vastgelegd [%2$s]:\n%3$s</string>
+    <string name="probe_empty">Niets vastgelegd (geen selectie en geen klembord)</string>
+
+    <string name="speed_label">Snelheid: %1$.2f×</string>
+    <string name="status">Status</string>
+    <string name="status_overlay_on">Overlay: toegestaan</string>
+    <string name="status_overlay_off">Overlay: niet toegestaan</string>
+    <string name="status_a11y_on">Toegankelijkheid: aan</string>
+    <string name="status_a11y_off">Toegankelijkheid: uit</string>
+    <string name="status_notif_on">Meldingen: toegestaan</string>
+    <string name="status_notif_off">Meldingen: niet toegestaan</string>
+    <string name="hint">Selecteer tekst in elke app en tik op de zwevende knop.</string>
+    <string name="test_phrase">Boltun is klaar. Selecteer tekst en tik op de knop.</string>
+
+    <string name="toast_no_selection">Niets geselecteerd. Selecteer of kopieer tekst en tik opnieuw.</string>
+    <string name="toast_no_overlay">Sta eerst weergave over andere apps toe</string>
+    <string name="toast_a11y_needed">Schakel eerst de toegankelijkheidsservice in</string>
+
+    <string name="cd_play">Afspelen</string>
+    <string name="cd_pause">Pauze</string>
+    <string name="cd_stop">Stop</string>
+    <string name="cd_speed">Snelheid</string>
+    <string name="cd_bubble">Voorlezen</string>
+    <string name="cd_prev">Vorige zin</string>
+    <string name="cd_next">Volgende zin</string>
+    <string name="cd_repeat">Zin herhalen</string>
+    <string name="cd_replay">Vanaf het begin opnieuw</string>
+    <string name="cd_resume">Doorgaan waar je gebleven was</string>
+    <string name="cd_settings">App-instellingen</string>
+    <string name="cd_close">Sluiten</string>
+
+    <string name="menu_resume">Doorgaan waar je gebleven was</string>
+    <string name="menu_app">App openen</string>
+    <string name="menu_close">Sluiten</string>
+</resources>

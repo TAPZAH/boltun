@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Boltun</string>
+    <string name="app_author">نویسنده: Tar3ah</string>
+    <string name="a11y_description">به Boltun اجازه می‌دهد متن انتخاب‌شده در هر برنامه‌ای را بگیرد و با صدای بلند بخواند.</string>
+
+    <string name="notif_channel_name">پخش</string>
+    <string name="notif_title">Boltun فعال است</string>
+    <string name="notif_text">برای خواندن متن انتخاب‌شده روی دکمه شناور بزنید</string>
+    <string name="notif_stop">توقف</string>
+
+    <string name="btn_overlay">۱. اجازه نمایش روی برنامه‌های دیگر</string>
+    <string name="btn_a11y">۲. فعال کردن سرویس دسترس‌پذیری</string>
+    <string name="btn_notif">۳. اجازه اعلان‌ها</string>
+    <string name="btn_start">نمایش دکمه شناور</string>
+    <string name="btn_stop">پنهان کردن دکمه شناور</string>
+    <string name="btn_battery">غیرفعال کردن بهینه‌سازی باتری</string>
+    <string name="btn_tts_settings">موتور گفتار پیش‌فرض</string>
+    <string name="btn_pick_engine">انتخاب موتور گفتار</string>
+    <string name="engine_pick_title">موتور گفتار</string>
+    <string name="engine_system_option">پیش‌فرض سیستم</string>
+    <string name="engine_none">هیچ موتور گفتاری نصب نشده است</string>
+    <string name="engine_disabled">غیرفعال</string>
+    <string name="engine_enable_hint">این موتور را در تنظیمات تبدیل متن به گفتار سیستم فعال کنید</string>
+    <string name="engine_label">موتور گفتار: %1$s</string>
+    <string name="btn_test">آزمون صدا</string>
+    <string name="btn_probe">بررسی ضبط انتخاب</string>
+    <string name="probe_ok">%1$d نویسه ضبط شد [%2$s]:\n%3$s</string>
+    <string name="probe_empty">چیزی ضبط نشد (نه انتخاب و نه بریده‌دان)</string>
+
+    <string name="speed_label">سرعت: %1$.2f×</string>
+    <string name="status">وضعیت</string>
+    <string name="status_overlay_on">لایه شناور: مجاز</string>
+    <string name="status_overlay_off">لایه شناور: غیرمجاز</string>
+    <string name="status_a11y_on">دسترس‌پذیری: روشن</string>
+    <string name="status_a11y_off">دسترس‌پذیری: خاموش</string>
+    <string name="status_notif_on">اعلان‌ها: مجاز</string>
+    <string name="status_notif_off">اعلان‌ها: غیرمجاز</string>
+    <string name="hint">متنی را در هر برنامه‌ای انتخاب کنید و روی دکمه شناور بزنید.</string>
+    <string name="test_phrase">Boltun آماده است. هر متنی را انتخاب کنید و روی دکمه بزنید.</string>
+
+    <string name="toast_no_selection">چیزی انتخاب نشده. متن را انتخاب یا کپی کنید و دوباره بزنید.</string>
+    <string name="toast_no_overlay">ابتدا اجازه نمایش روی برنامه‌های دیگر را بدهید</string>
+    <string name="toast_a11y_needed">ابتدا سرویس دسترس‌پذیری را فعال کنید</string>
+
+    <string name="cd_play">پخش</string>
+    <string name="cd_pause">توقف موقت</string>
+    <string name="cd_stop">توقف</string>
+    <string name="cd_speed">سرعت</string>
+    <string name="cd_bubble">خواندن با صدای بلند</string>
+    <string name="cd_prev">جمله قبلی</string>
+    <string name="cd_next">جمله بعدی</string>
+    <string name="cd_repeat">تکرار جمله</string>
+    <string name="cd_replay">پخش از ابتدا</string>
+    <string name="cd_resume">ادامه از جایی که رها کردید</string>
+    <string name="cd_settings">تنظیمات برنامه</string>
+    <string name="cd_close">بستن</string>
+
+    <string name="menu_resume">ادامه از جایی که رها کردید</string>
+    <string name="menu_app">باز کردن برنامه</string>
+    <string name="menu_close">بستن</string>
+</resources>

@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Boltun</string>
+    <string name="app_author">Autor: Tar3ah</string>
+    <string name="a11y_description">Erlaubt Boltun, den in einer beliebigen App markierten Text zu erfassen und vorzulesen.</string>
+
+    <string name="notif_channel_name">Wiedergabe</string>
+    <string name="notif_title">Boltun ist aktiv</string>
+    <string name="notif_text">Tippe auf die schwebende Schaltfläche, um den markierten Text vorzulesen</string>
+    <string name="notif_stop">Stopp</string>
+
+    <string name="btn_overlay">1. Anzeige über anderen Apps erlauben</string>
+    <string name="btn_a11y">2. Bedienungshilfen-Dienst aktivieren</string>
+    <string name="btn_notif">3. Benachrichtigungen erlauben</string>
+    <string name="btn_start">Schwebende Schaltfläche anzeigen</string>
+    <string name="btn_stop">Schwebende Schaltfläche ausblenden</string>
+    <string name="btn_battery">Akku-Optimierung deaktivieren</string>
+    <string name="btn_tts_settings">Standard-Sprachausgabe</string>
+    <string name="btn_pick_engine">Sprachausgabe wählen</string>
+    <string name="engine_pick_title">Sprachausgabe</string>
+    <string name="engine_system_option">Systemstandard</string>
+    <string name="engine_none">Keine Sprachausgaben installiert</string>
+    <string name="engine_disabled">deaktiviert</string>
+    <string name="engine_enable_hint">Aktiviere diese Sprachausgabe in den Systemeinstellungen für Text-to-Speech</string>
+    <string name="engine_label">Sprachausgabe: %1$s</string>
+    <string name="btn_test">Stimme testen</string>
+    <string name="btn_probe">Auswahl-Erfassung prüfen</string>
+    <string name="probe_ok">%1$d Zeichen erfasst [%2$s]:\n%3$s</string>
+    <string name="probe_empty">Nichts erfasst (keine Auswahl und keine Zwischenablage)</string>
+
+    <string name="speed_label">Geschwindigkeit: %1$.2f×</string>
+    <string name="status">Status</string>
+    <string name="status_overlay_on">Überlagerung: erlaubt</string>
+    <string name="status_overlay_off">Überlagerung: nicht erlaubt</string>
+    <string name="status_a11y_on">Bedienungshilfen: ein</string>
+    <string name="status_a11y_off">Bedienungshilfen: aus</string>
+    <string name="status_notif_on">Benachrichtigungen: erlaubt</string>
+    <string name="status_notif_off">Benachrichtigungen: nicht erlaubt</string>
+    <string name="hint">Markiere Text in einer beliebigen App und tippe auf die schwebende Schaltfläche.</string>
+    <string name="test_phrase">Boltun ist bereit. Markiere einen beliebigen Text und tippe auf die Schaltfläche.</string>
+
+    <string name="toast_no_selection">Nichts markiert. Markiere oder kopiere Text und tippe erneut.</string>
+    <string name="toast_no_overlay">Erlaube zuerst die Anzeige über anderen Apps</string>
+    <string name="toast_a11y_needed">Aktiviere zuerst den Bedienungshilfen-Dienst</string>
+
+    <string name="cd_play">Wiedergabe</string>
+    <string name="cd_pause">Pause</string>
+    <string name="cd_stop">Stopp</string>
+    <string name="cd_speed">Geschwindigkeit</string>
+    <string name="cd_bubble">Vorlesen</string>
+    <string name="cd_prev">Vorheriger Satz</string>
+    <string name="cd_next">Nächster Satz</string>
+    <string name="cd_repeat">Satz wiederholen</string>
+    <string name="cd_replay">Von Anfang an wiederholen</string>
+    <string name="cd_resume">Dort fortsetzen, wo aufgehört wurde</string>
+    <string name="cd_settings">App-Einstellungen</string>
+    <string name="cd_close">Schließen</string>
+
+    <string name="menu_resume">Weiter, wo aufgehört wurde</string>
+    <string name="menu_app">App öffnen</string>
+    <string name="menu_close">Schließen</string>
+</resources>

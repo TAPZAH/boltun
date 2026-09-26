@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Boltun</string>
+    <string name="app_author">Auteur : Tar3ah</string>
+    <string name="a11y_description">Permet à Boltun de capturer le texte sélectionné dans n\'importe quelle application et de le lire à voix haute.</string>
+
+    <string name="notif_channel_name">Lecture</string>
+    <string name="notif_title">Boltun est actif</string>
+    <string name="notif_text">Touchez le bouton flottant pour lire le texte sélectionné</string>
+    <string name="notif_stop">Arrêter</string>
+
+    <string name="btn_overlay">1. Autoriser l\'affichage par-dessus les autres applis</string>
+    <string name="btn_a11y">2. Activer le service d\'accessibilité</string>
+    <string name="btn_notif">3. Autoriser les notifications</string>
+    <string name="btn_start">Afficher le bouton flottant</string>
+    <string name="btn_stop">Masquer le bouton flottant</string>
+    <string name="btn_battery">Désactiver l\'optimisation de la batterie</string>
+    <string name="btn_tts_settings">Moteur vocal par défaut</string>
+    <string name="btn_pick_engine">Choisir le moteur vocal</string>
+    <string name="engine_pick_title">Moteur vocal</string>
+    <string name="engine_system_option">Système par défaut</string>
+    <string name="engine_none">Aucun moteur vocal installé</string>
+    <string name="engine_disabled">désactivé</string>
+    <string name="engine_enable_hint">Activez ce moteur dans les réglages système de synthèse vocale</string>
+    <string name="engine_label">Moteur vocal : %1$s</string>
+    <string name="btn_test">Tester la voix</string>
+    <string name="btn_probe">Vérifier la capture de sélection</string>
+    <string name="probe_ok">%1$d caractères capturés [%2$s] :\n%3$s</string>
+    <string name="probe_empty">Rien capturé (ni sélection ni presse-papiers)</string>
+
+    <string name="speed_label">Vitesse : %1$.2f×</string>
+    <string name="status">État</string>
+    <string name="status_overlay_on">Superposition : autorisée</string>
+    <string name="status_overlay_off">Superposition : non autorisée</string>
+    <string name="status_a11y_on">Accessibilité : activée</string>
+    <string name="status_a11y_off">Accessibilité : désactivée</string>
+    <string name="status_notif_on">Notifications : autorisées</string>
+    <string name="status_notif_off">Notifications : non autorisées</string>
+    <string name="hint">Sélectionnez du texte dans n\'importe quelle appli, puis touchez le bouton flottant.</string>
+    <string name="test_phrase">Boltun est prêt. Sélectionnez un texte et touchez le bouton.</string>
+
+    <string name="toast_no_selection">Rien de sélectionné. Sélectionnez ou copiez du texte, puis touchez à nouveau.</string>
+    <string name="toast_no_overlay">Autorisez d\'abord l\'affichage par-dessus les autres applis</string>
+    <string name="toast_a11y_needed">Activez d\'abord le service d\'accessibilité</string>
+
+    <string name="cd_play">Lecture</string>
+    <string name="cd_pause">Pause</string>
+    <string name="cd_stop">Arrêter</string>
+    <string name="cd_speed">Vitesse</string>
+    <string name="cd_bubble">Lire à voix haute</string>
+    <string name="cd_prev">Phrase précédente</string>
+    <string name="cd_next">Phrase suivante</string>
+    <string name="cd_repeat">Répéter la phrase</string>
+    <string name="cd_replay">Rejouer depuis le début</string>
+    <string name="cd_resume">Reprendre où on s\'est arrêté</string>
+    <string name="cd_settings">Réglages de l\'appli</string>
+    <string name="cd_close">Fermer</string>
+
+    <string name="menu_resume">Reprendre où on s\'est arrêté</string>
+    <string name="menu_app">Ouvrir l\'appli</string>
+    <string name="menu_close">Fermer</string>
+</resources>

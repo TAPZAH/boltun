@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Boltun</string>
+    <string name="app_author">Penulis: Tar3ah</string>
+    <string name="a11y_description">Memungkinkan Boltun menangkap teks yang Anda pilih di aplikasi apa pun dan membacanya dengan lantang.</string>
+
+    <string name="notif_channel_name">Pemutaran</string>
+    <string name="notif_title">Boltun aktif</string>
+    <string name="notif_text">Ketuk tombol mengambang untuk membaca teks yang dipilih</string>
+    <string name="notif_stop">Hentikan</string>
+
+    <string name="btn_overlay">1. Izinkan menampilkan di atas aplikasi lain</string>
+    <string name="btn_a11y">2. Aktifkan layanan aksesibilitas</string>
+    <string name="btn_notif">3. Izinkan notifikasi</string>
+    <string name="btn_start">Tampilkan tombol mengambang</string>
+    <string name="btn_stop">Sembunyikan tombol mengambang</string>
+    <string name="btn_battery">Nonaktifkan pengoptimalan baterai</string>
+    <string name="btn_tts_settings">Mesin suara default</string>
+    <string name="btn_pick_engine">Pilih mesin suara</string>
+    <string name="engine_pick_title">Mesin suara</string>
+    <string name="engine_system_option">Default sistem</string>
+    <string name="engine_none">Tidak ada mesin suara terpasang</string>
+    <string name="engine_disabled">nonaktif</string>
+    <string name="engine_enable_hint">Aktifkan mesin ini di pengaturan teks-ke-ucapan sistem</string>
+    <string name="engine_label">Mesin suara: %1$s</string>
+    <string name="btn_test">Uji suara</string>
+    <string name="btn_probe">Periksa penangkapan pilihan</string>
+    <string name="probe_ok">%1$d karakter ditangkap [%2$s]:\n%3$s</string>
+    <string name="probe_empty">Tidak ada yang ditangkap (tidak ada pilihan maupun papan klip)</string>
+
+    <string name="speed_label">Kecepatan: %1$.2f×</string>
+    <string name="status">Status</string>
+    <string name="status_overlay_on">Overlay: diizinkan</string>
+    <string name="status_overlay_off">Overlay: tidak diizinkan</string>
+    <string name="status_a11y_on">Aksesibilitas: aktif</string>
+    <string name="status_a11y_off">Aksesibilitas: nonaktif</string>
+    <string name="status_notif_on">Notifikasi: diizinkan</string>
+    <string name="status_notif_off">Notifikasi: tidak diizinkan</string>
+    <string name="hint">Pilih teks di aplikasi apa pun, lalu ketuk tombol mengambang.</string>
+    <string name="test_phrase">Boltun siap. Pilih teks apa pun dan ketuk tombol.</string>
+
+    <string name="toast_no_selection">Tidak ada yang dipilih. Pilih atau salin teks, lalu ketuk lagi.</string>
+    <string name="toast_no_overlay">Izinkan dulu menampilkan di atas aplikasi lain</string>
+    <string name="toast_a11y_needed">Aktifkan dulu layanan aksesibilitas</string>
+
+    <string name="cd_play">Putar</string>
+    <string name="cd_pause">Jeda</string>
+    <string name="cd_stop">Hentikan</string>
+    <string name="cd_speed">Kecepatan</string>
+    <string name="cd_bubble">Baca dengan lantang</string>
+    <string name="cd_prev">Kalimat sebelumnya</string>
+    <string name="cd_next">Kalimat berikutnya</string>
+    <string name="cd_repeat">Ulangi kalimat</string>
+    <string name="cd_replay">Putar dari awal</string>
+    <string name="cd_resume">Lanjutkan dari tempat terakhir</string>
+    <string name="cd_settings">Pengaturan aplikasi</string>
+    <string name="cd_close">Tutup</string>
+
+    <string name="menu_resume">Lanjutkan dari tempat terakhir</string>
+    <string name="menu_app">Buka aplikasi</string>
+    <string name="menu_close">Tutup</string>
+</resources>

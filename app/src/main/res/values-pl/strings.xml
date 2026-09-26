@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Boltun</string>
+    <string name="app_author">Autor: Tar3ah</string>
+    <string name="a11y_description">Umożliwia Boltunowi przechwycenie zaznaczonego w dowolnej aplikacji tekstu i przeczytanie go na głos.</string>
+
+    <string name="notif_channel_name">Odtwarzanie</string>
+    <string name="notif_title">Boltun jest aktywny</string>
+    <string name="notif_text">Dotknij pływającego przycisku, aby przeczytać zaznaczony tekst</string>
+    <string name="notif_stop">Zatrzymaj</string>
+
+    <string name="btn_overlay">1. Zezwól na wyświetlanie nad innymi aplikacjami</string>
+    <string name="btn_a11y">2. Włącz usługę ułatwień dostępu</string>
+    <string name="btn_notif">3. Zezwól na powiadomienia</string>
+    <string name="btn_start">Pokaż pływający przycisk</string>
+    <string name="btn_stop">Ukryj pływający przycisk</string>
+    <string name="btn_battery">Wyłącz optymalizację baterii</string>
+    <string name="btn_tts_settings">Domyślny silnik mowy</string>
+    <string name="btn_pick_engine">Wybierz silnik mowy</string>
+    <string name="engine_pick_title">Silnik mowy</string>
+    <string name="engine_system_option">Domyślny systemowy</string>
+    <string name="engine_none">Brak zainstalowanych silników mowy</string>
+    <string name="engine_disabled">wyłączony</string>
+    <string name="engine_enable_hint">Włącz ten silnik w systemowych ustawieniach syntezy mowy</string>
+    <string name="engine_label">Silnik mowy: %1$s</string>
+    <string name="btn_test">Testuj głos</string>
+    <string name="btn_probe">Sprawdź przechwytywanie zaznaczenia</string>
+    <string name="probe_ok">Przechwycono %1$d znaków [%2$s]:\n%3$s</string>
+    <string name="probe_empty">Nic nie przechwycono (brak zaznaczenia i schowka)</string>
+
+    <string name="speed_label">Prędkość: %1$.2f×</string>
+    <string name="status">Stan</string>
+    <string name="status_overlay_on">Nakładka: dozwolona</string>
+    <string name="status_overlay_off">Nakładka: niedozwolona</string>
+    <string name="status_a11y_on">Ułatwienia dostępu: włączone</string>
+    <string name="status_a11y_off">Ułatwienia dostępu: wyłączone</string>
+    <string name="status_notif_on">Powiadomienia: dozwolone</string>
+    <string name="status_notif_off">Powiadomienia: niedozwolone</string>
+    <string name="hint">Zaznacz tekst w dowolnej aplikacji i dotknij pływającego przycisku.</string>
+    <string name="test_phrase">Boltun jest gotowy. Zaznacz dowolny tekst i dotknij przycisku.</string>
+
+    <string name="toast_no_selection">Nic nie zaznaczono. Zaznacz lub skopiuj tekst i dotknij ponownie.</string>
+    <string name="toast_no_overlay">Najpierw zezwól na wyświetlanie nad innymi aplikacjami</string>
+    <string name="toast_a11y_needed">Najpierw włącz usługę ułatwień dostępu</string>
+
+    <string name="cd_play">Odtwórz</string>
+    <string name="cd_pause">Pauza</string>
+    <string name="cd_stop">Zatrzymaj</string>
+    <string name="cd_speed">Prędkość</string>
+    <string name="cd_bubble">Czytaj na głos</string>
+    <string name="cd_prev">Poprzednie zdanie</string>
+    <string name="cd_next">Następne zdanie</string>
+    <string name="cd_repeat">Powtórz zdanie</string>
+    <string name="cd_replay">Odtwórz od początku</string>
+    <string name="cd_resume">Kontynuuj od miejsca</string>
+    <string name="cd_settings">Ustawienia aplikacji</string>
+    <string name="cd_close">Zamknij</string>
+
+    <string name="menu_resume">Kontynuuj od miejsca</string>
+    <string name="menu_app">Otwórz aplikację</string>
+    <string name="menu_close">Zamknij</string>
+</resources>

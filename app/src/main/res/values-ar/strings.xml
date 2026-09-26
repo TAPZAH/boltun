@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Boltun</string>
+    <string name="app_author">المؤلف: Tar3ah</string>
+    <string name="a11y_description">يتيح لـ Boltun التقاط النص المحدد في أي تطبيق وقراءته بصوت عالٍ.</string>
+
+    <string name="notif_channel_name">التشغيل</string>
+    <string name="notif_title">Boltun نشط</string>
+    <string name="notif_text">اضغط على الزر العائم لقراءة النص المحدد</string>
+    <string name="notif_stop">إيقاف</string>
+
+    <string name="btn_overlay">1. السماح بالعرض فوق التطبيقات الأخرى</string>
+    <string name="btn_a11y">2. تفعيل خدمة إمكانية الوصول</string>
+    <string name="btn_notif">3. السماح بالإشعارات</string>
+    <string name="btn_start">إظهار الزر العائم</string>
+    <string name="btn_stop">إخفاء الزر العائم</string>
+    <string name="btn_battery">تعطيل تحسين البطارية</string>
+    <string name="btn_tts_settings">محرك الكلام الافتراضي</string>
+    <string name="btn_pick_engine">اختيار محرك الكلام</string>
+    <string name="engine_pick_title">محرك الكلام</string>
+    <string name="engine_system_option">افتراضي النظام</string>
+    <string name="engine_none">لا توجد محركات كلام مثبتة</string>
+    <string name="engine_disabled">معطّل</string>
+    <string name="engine_enable_hint">فعّل هذا المحرك من إعدادات تحويل النص إلى كلام في النظام</string>
+    <string name="engine_label">محرك الكلام: %1$s</string>
+    <string name="btn_test">اختبار الصوت</string>
+    <string name="btn_probe">التحقق من التقاط التحديد</string>
+    <string name="probe_ok">تم التقاط %1$d حرفًا [%2$s]:\n%3$s</string>
+    <string name="probe_empty">لم يتم التقاط شيء (لا تحديد ولا حافظة)</string>
+
+    <string name="speed_label">السرعة: %1$.2f×</string>
+    <string name="status">الحالة</string>
+    <string name="status_overlay_on">الطبقة العائمة: مسموح</string>
+    <string name="status_overlay_off">الطبقة العائمة: غير مسموح</string>
+    <string name="status_a11y_on">إمكانية الوصول: مفعّلة</string>
+    <string name="status_a11y_off">إمكانية الوصول: معطّلة</string>
+    <string name="status_notif_on">الإشعارات: مسموح</string>
+    <string name="status_notif_off">الإشعارات: غير مسموح</string>
+    <string name="hint">حدّد نصًا في أي تطبيق ثم اضغط على الزر العائم.</string>
+    <string name="test_phrase">Boltun جاهز. حدّد أي نص واضغط على الزر.</string>
+
+    <string name="toast_no_selection">لا يوجد تحديد. حدّد النص أو انسخه ثم اضغط مجددًا.</string>
+    <string name="toast_no_overlay">اسمح أولًا بالعرض فوق التطبيقات الأخرى</string>
+    <string name="toast_a11y_needed">فعّل أولًا خدمة إمكانية الوصول</string>
+
+    <string name="cd_play">تشغيل</string>
+    <string name="cd_pause">إيقاف مؤقت</string>
+    <string name="cd_stop">إيقاف</string>
+    <string name="cd_speed">السرعة</string>
+    <string name="cd_bubble">القراءة بصوت عالٍ</string>
+    <string name="cd_prev">الجملة السابقة</string>
+    <string name="cd_next">الجملة التالية</string>
+    <string name="cd_repeat">تكرار الجملة</string>
+    <string name="cd_replay">إعادة من البداية</string>
+    <string name="cd_resume">المتابعة من حيث توقفت</string>
+    <string name="cd_settings">إعدادات التطبيق</string>
+    <string name="cd_close">إغلاق</string>
+
+    <string name="menu_resume">المتابعة من حيث توقفت</string>
+    <string name="menu_app">فتح التطبيق</string>
+    <string name="menu_close">إغلاق</string>
+</resources>

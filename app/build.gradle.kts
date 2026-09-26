@@ -30,7 +30,12 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
-        resourceConfigurations += listOf("ru", "en", "es")
+        resourceConfigurations += listOf(
+            "ru", "en", "es",
+            "de", "fr", "it", "pt", "nl", "pl", "tr",
+            "ar", "fa", "hi", "bn", "ur",
+            "zh-rCN", "ja", "ko", "vi", "th", "in"
+        )
     }
 
     signingConfigs {

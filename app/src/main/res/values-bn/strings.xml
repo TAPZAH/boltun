@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Boltun</string>
+    <string name="app_author">লেখক: Tar3ah</string>
+    <string name="a11y_description">Boltun-কে যেকোনো অ্যাপে নির্বাচিত টেক্সট ধরে জোরে পড়ার অনুমতি দেয়।</string>
+
+    <string name="notif_channel_name">প্লেব্যাক</string>
+    <string name="notif_title">Boltun সক্রিয়</string>
+    <string name="notif_text">নির্বাচিত টেক্সট পড়তে ফ্লোটিং বোতামে চাপ দিন</string>
+    <string name="notif_stop">থামান</string>
+
+    <string name="btn_overlay">1. অন্যান্য অ্যাপের উপরে দেখানোর অনুমতি দিন</string>
+    <string name="btn_a11y">2. অ্যাক্সেসিবিলিটি পরিষেবা চালু করুন</string>
+    <string name="btn_notif">3. বিজ্ঞপ্তির অনুমতি দিন</string>
+    <string name="btn_start">ফ্লোটিং বোতাম দেখান</string>
+    <string name="btn_stop">ফ্লোটিং বোতাম লুকান</string>
+    <string name="btn_battery">ব্যাটারি অপটিমাইজেশন বন্ধ করুন</string>
+    <string name="btn_tts_settings">ডিফল্ট স্পিচ ইঞ্জিন</string>
+    <string name="btn_pick_engine">স্পিচ ইঞ্জিন বাছুন</string>
+    <string name="engine_pick_title">স্পিচ ইঞ্জিন</string>
+    <string name="engine_system_option">সিস্টেম ডিফল্ট</string>
+    <string name="engine_none">কোনো স্পিচ ইঞ্জিন ইনস্টল নেই</string>
+    <string name="engine_disabled">নিষ্ক্রিয়</string>
+    <string name="engine_enable_hint">সিস্টেম টেক্সট-টু-স্পিচ সেটিংসে এই ইঞ্জিন চালু করুন</string>
+    <string name="engine_label">স্পিচ ইঞ্জিন: %1$s</string>
+    <string name="btn_test">ভয়েস পরীক্ষা করুন</string>
+    <string name="btn_probe">নির্বাচন ক্যাপচার পরীক্ষা করুন</string>
+    <string name="probe_ok">%1$d অক্ষর ক্যাপচার হয়েছে [%2$s]:\n%3$s</string>
+    <string name="probe_empty">কিছু ক্যাপচার হয়নি (নির্বাচন ও ক্লিপবোর্ড নেই)</string>
+
+    <string name="speed_label">গতি: %1$.2f×</string>
+    <string name="status">অবস্থা</string>
+    <string name="status_overlay_on">ওভারলে: অনুমোদিত</string>
+    <string name="status_overlay_off">ওভারলে: অনুমোদিত নয়</string>
+    <string name="status_a11y_on">অ্যাক্সেসিবিলিটি: চালু</string>
+    <string name="status_a11y_off">অ্যাক্সেসিবিলিটি: বন্ধ</string>
+    <string name="status_notif_on">বিজ্ঞপ্তি: অনুমোদিত</string>
+    <string name="status_notif_off">বিজ্ঞপ্তি: অনুমোদিত নয়</string>
+    <string name="hint">যেকোনো অ্যাপে টেক্সট নির্বাচন করুন, তারপর ফ্লোটিং বোতামে চাপ দিন।</string>
+    <string name="test_phrase">Boltun প্রস্তুত। যেকোনো টেক্সট নির্বাচন করুন এবং বোতামে চাপ দিন।</string>
+
+    <string name="toast_no_selection">কিছু নির্বাচিত নয়। টেক্সট নির্বাচন বা কপি করুন, তারপর আবার চাপ দিন।</string>
+    <string name="toast_no_overlay">প্রথমে অন্যান্য অ্যাপের উপরে দেখানোর অনুমতি দিন</string>
+    <string name="toast_a11y_needed">প্রথমে অ্যাক্সেসিবিলিটি পরিষেবা চালু করুন</string>
+
+    <string name="cd_play">চালান</string>
+    <string name="cd_pause">বিরতি</string>
+    <string name="cd_stop">থামান</string>
+    <string name="cd_speed">গতি</string>
+    <string name="cd_bubble">জোরে পড়ুন</string>
+    <string name="cd_prev">আগের বাক্য</string>
+    <string name="cd_next">পরের বাক্য</string>
+    <string name="cd_repeat">বাক্য পুনরাবৃত্তি</string>
+    <string name="cd_replay">শুরু থেকে চালান</string>
+    <string name="cd_resume">যেখানে ছেড়েছিলেন সেখান থেকে চালিয়ে যান</string>
+    <string name="cd_settings">অ্যাপ সেটিংস</string>
+    <string name="cd_close">বন্ধ করুন</string>
+
+    <string name="menu_resume">যেখানে ছেড়েছিলেন সেখান থেকে চালিয়ে যান</string>
+    <string name="menu_app">অ্যাপ খুলুন</string>
+    <string name="menu_close">বন্ধ করুন</string>
+</resources>

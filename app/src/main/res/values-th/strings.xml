@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Boltun</string>
+    <string name="app_author">ผู้เขียน: Tar3ah</string>
+    <string name="a11y_description">อนุญาตให้ Boltun จับข้อความที่คุณเลือกในแอปใดก็ได้และอ่านออกเสียง</string>
+
+    <string name="notif_channel_name">การเล่น</string>
+    <string name="notif_title">Boltun ทำงานอยู่</string>
+    <string name="notif_text">แตะปุ่มลอยเพื่ออ่านข้อความที่เลือก</string>
+    <string name="notif_stop">หยุด</string>
+
+    <string name="btn_overlay">1. อนุญาตให้แสดงทับแอปอื่น</string>
+    <string name="btn_a11y">2. เปิดใช้บริการการช่วยการเข้าถึง</string>
+    <string name="btn_notif">3. อนุญาตการแจ้งเตือน</string>
+    <string name="btn_start">แสดงปุ่มลอย</string>
+    <string name="btn_stop">ซ่อนปุ่มลอย</string>
+    <string name="btn_battery">ปิดการเพิ่มประสิทธิภาพแบตเตอรี่</string>
+    <string name="btn_tts_settings">เครื่องสังเคราะห์เสียงเริ่มต้น</string>
+    <string name="btn_pick_engine">เลือกเครื่องสังเคราะห์เสียง</string>
+    <string name="engine_pick_title">เครื่องสังเคราะห์เสียง</string>
+    <string name="engine_system_option">ค่าเริ่มต้นของระบบ</string>
+    <string name="engine_none">ไม่มีเครื่องสังเคราะห์เสียงที่ติดตั้ง</string>
+    <string name="engine_disabled">ปิดใช้งาน</string>
+    <string name="engine_enable_hint">เปิดใช้เครื่องนี้ในการตั้งค่าข้อความเป็นเสียงของระบบ</string>
+    <string name="engine_label">เครื่องสังเคราะห์เสียง: %1$s</string>
+    <string name="btn_test">ทดสอบเสียง</string>
+    <string name="btn_probe">ตรวจสอบการจับข้อความ</string>
+    <string name="probe_ok">จับได้ %1$d อักขระ [%2$s]:\n%3$s</string>
+    <string name="probe_empty">ไม่จับได้อะไร (ไม่มีข้อความที่เลือกและคลิปบอร์ด)</string>
+
+    <string name="speed_label">ความเร็ว: %1$.2f×</string>
+    <string name="status">สถานะ</string>
+    <string name="status_overlay_on">การซ้อนทับ: อนุญาต</string>
+    <string name="status_overlay_off">การซ้อนทับ: ไม่อนุญาต</string>
+    <string name="status_a11y_on">การช่วยการเข้าถึง: เปิด</string>
+    <string name="status_a11y_off">การช่วยการเข้าถึง: ปิด</string>
+    <string name="status_notif_on">การแจ้งเตือน: อนุญาต</string>
+    <string name="status_notif_off">การแจ้งเตือน: ไม่อนุญาต</string>
+    <string name="hint">เลือกข้อความในแอปใดก็ได้ แล้วแตะปุ่มลอย</string>
+    <string name="test_phrase">Boltun พร้อมแล้ว เลือกข้อความใดก็ได้แล้วแตะปุ่ม</string>
+
+    <string name="toast_no_selection">ยังไม่ได้เลือกอะไร เลือกหรือคัดลอกข้อความแล้วแตะอีกครั้ง</string>
+    <string name="toast_no_overlay">อนุญาตให้แสดงทับแอปอื่นก่อน</string>
+    <string name="toast_a11y_needed">เปิดใช้บริการการช่วยการเข้าถึงก่อน</string>
+
+    <string name="cd_play">เล่น</string>
+    <string name="cd_pause">หยุดชั่วคราว</string>
+    <string name="cd_stop">หยุด</string>
+    <string name="cd_speed">ความเร็ว</string>
+    <string name="cd_bubble">อ่านออกเสียง</string>
+    <string name="cd_prev">ประโยคก่อนหน้า</string>
+    <string name="cd_next">ประโยคถัดไป</string>
+    <string name="cd_repeat">ทำซ้ำประโยค</string>
+    <string name="cd_replay">เล่นซ้ำตั้งแต่ต้น</string>
+    <string name="cd_resume">เล่นต่อจากจุดที่หยุด</string>
+    <string name="cd_settings">การตั้งค่าแอป</string>
+    <string name="cd_close">ปิด</string>
+
+    <string name="menu_resume">เล่นต่อจากจุดที่หยุด</string>
+    <string name="menu_app">เปิดแอป</string>
+    <string name="menu_close">ปิด</string>
+</resources>

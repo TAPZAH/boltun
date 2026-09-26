@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Boltun</string>
+    <string name="app_author">مصنف: Tar3ah</string>
+    <string name="a11y_description">Boltun کو کسی بھی ایپ میں منتخب متن پکڑ کر بلند آواز میں پڑھنے کی اجازت دیتا ہے۔</string>
+
+    <string name="notif_channel_name">پلے بیک</string>
+    <string name="notif_title">Boltun فعال ہے</string>
+    <string name="notif_text">منتخب متن پڑھنے کے لیے فلوٹنگ بٹن دبائیں</string>
+    <string name="notif_stop">روکیں</string>
+
+    <string name="btn_overlay">1. دیگر ایپس کے اوپر دکھانے کی اجازت دیں</string>
+    <string name="btn_a11y">2. رسائی سروس فعال کریں</string>
+    <string name="btn_notif">3. اطلاعات کی اجازت دیں</string>
+    <string name="btn_start">فلوٹنگ بٹن دکھائیں</string>
+    <string name="btn_stop">فلوٹنگ بٹن چھپائیں</string>
+    <string name="btn_battery">بیٹری آپٹیمائزیشن بند کریں</string>
+    <string name="btn_tts_settings">ڈیفالٹ اسپیچ انجن</string>
+    <string name="btn_pick_engine">اسپیچ انجن منتخب کریں</string>
+    <string name="engine_pick_title">اسپیچ انجن</string>
+    <string name="engine_system_option">سسٹم ڈیفالٹ</string>
+    <string name="engine_none">کوئی اسپیچ انجن انسٹال نہیں</string>
+    <string name="engine_disabled">بند</string>
+    <string name="engine_enable_hint">اس انجن کو سسٹم ٹیکسٹ ٹو اسپیچ سیٹنگز میں فعال کریں</string>
+    <string name="engine_label">اسپیچ انجن: %1$s</string>
+    <string name="btn_test">آواز آزمائیں</string>
+    <string name="btn_probe">انتخاب کیپچر چیک کریں</string>
+    <string name="probe_ok">%1$d حروف کیپچر ہوئے [%2$s]:\n%3$s</string>
+    <string name="probe_empty">کچھ کیپچر نہیں ہوا (نہ انتخاب نہ کلپ بورڈ)</string>
+
+    <string name="speed_label">رفتار: %1$.2f×</string>
+    <string name="status">حالت</string>
+    <string name="status_overlay_on">اوورلے: اجازت ہے</string>
+    <string name="status_overlay_off">اوورلے: اجازت نہیں</string>
+    <string name="status_a11y_on">رسائی: آن</string>
+    <string name="status_a11y_off">رسائی: آف</string>
+    <string name="status_notif_on">اطلاعات: اجازت ہے</string>
+    <string name="status_notif_off">اطلاعات: اجازت نہیں</string>
+    <string name="hint">کسی بھی ایپ میں متن منتخب کریں، پھر فلوٹنگ بٹن دبائیں۔</string>
+    <string name="test_phrase">Boltun تیار ہے۔ کوئی بھی متن منتخب کریں اور بٹن دبائیں۔</string>
+
+    <string name="toast_no_selection">کچھ منتخب نہیں۔ متن منتخب یا کاپی کریں، پھر دوبارہ دبائیں۔</string>
+    <string name="toast_no_overlay">پہلے دیگر ایپس کے اوپر دکھانے کی اجازت دیں</string>
+    <string name="toast_a11y_needed">پہلے رسائی سروس فعال کریں</string>
+
+    <string name="cd_play">چلائیں</string>
+    <string name="cd_pause">روکیں</string>
+    <string name="cd_stop">روکیں</string>
+    <string name="cd_speed">رفتار</string>
+    <string name="cd_bubble">بلند آواز میں پڑھیں</string>
+    <string name="cd_prev">پچھلا جملہ</string>
+    <string name="cd_next">اگلا جملہ</string>
+    <string name="cd_repeat">جملہ دہرائیں</string>
+    <string name="cd_replay">شروع سے چلائیں</string>
+    <string name="cd_resume">جہاں چھوڑا تھا وہاں سے جاری رکھیں</string>
+    <string name="cd_settings">ایپ سیٹنگز</string>
+    <string name="cd_close">بند کریں</string>
+
+    <string name="menu_resume">جہاں چھوڑا تھا وہاں سے جاری رکھیں</string>
+    <string name="menu_app">ایپ کھولیں</string>
+    <string name="menu_close">بند کریں</string>
+</resources>

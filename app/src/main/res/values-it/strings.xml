@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Boltun</string>
+    <string name="app_author">Autore: Tar3ah</string>
+    <string name="a11y_description">Consente a Boltun di acquisire il testo selezionato in qualsiasi app e di leggerlo ad alta voce.</string>
+
+    <string name="notif_channel_name">Riproduzione</string>
+    <string name="notif_title">Boltun è attivo</string>
+    <string name="notif_text">Tocca il pulsante flottante per leggere il testo selezionato</string>
+    <string name="notif_stop">Ferma</string>
+
+    <string name="btn_overlay">1. Consenti visualizzazione sopra le altre app</string>
+    <string name="btn_a11y">2. Attiva il servizio di accessibilità</string>
+    <string name="btn_notif">3. Consenti le notifiche</string>
+    <string name="btn_start">Mostra pulsante flottante</string>
+    <string name="btn_stop">Nascondi pulsante flottante</string>
+    <string name="btn_battery">Disattiva ottimizzazione batteria</string>
+    <string name="btn_tts_settings">Motore vocale predefinito</string>
+    <string name="btn_pick_engine">Scegli motore vocale</string>
+    <string name="engine_pick_title">Motore vocale</string>
+    <string name="engine_system_option">Predefinito di sistema</string>
+    <string name="engine_none">Nessun motore vocale installato</string>
+    <string name="engine_disabled">disattivato</string>
+    <string name="engine_enable_hint">Attiva questo motore nelle impostazioni di sintesi vocale del sistema</string>
+    <string name="engine_label">Motore vocale: %1$s</string>
+    <string name="btn_test">Prova voce</string>
+    <string name="btn_probe">Verifica acquisizione selezione</string>
+    <string name="probe_ok">%1$d caratteri acquisiti [%2$s]:\n%3$s</string>
+    <string name="probe_empty">Nulla acquisito (nessuna selezione e nessun appunti)</string>
+
+    <string name="speed_label">Velocità: %1$.2f×</string>
+    <string name="status">Stato</string>
+    <string name="status_overlay_on">Sovrapposizione: consentita</string>
+    <string name="status_overlay_off">Sovrapposizione: non consentita</string>
+    <string name="status_a11y_on">Accessibilità: attiva</string>
+    <string name="status_a11y_off">Accessibilità: disattiva</string>
+    <string name="status_notif_on">Notifiche: consentite</string>
+    <string name="status_notif_off">Notifiche: non consentite</string>
+    <string name="hint">Seleziona il testo in qualsiasi app, poi tocca il pulsante flottante.</string>
+    <string name="test_phrase">Boltun è pronto. Seleziona un testo e tocca il pulsante.</string>
+
+    <string name="toast_no_selection">Nulla selezionato. Seleziona o copia il testo, poi tocca di nuovo.</string>
+    <string name="toast_no_overlay">Consenti prima la visualizzazione sopra le altre app</string>
+    <string name="toast_a11y_needed">Attiva prima il servizio di accessibilità</string>
+
+    <string name="cd_play">Riproduci</string>
+    <string name="cd_pause">Pausa</string>
+    <string name="cd_stop">Ferma</string>
+    <string name="cd_speed">Velocità</string>
+    <string name="cd_bubble">Leggi ad alta voce</string>
+    <string name="cd_prev">Frase precedente</string>
+    <string name="cd_next">Frase successiva</string>
+    <string name="cd_repeat">Ripeti frase</string>
+    <string name="cd_replay">Riproduci dall\'inizio</string>
+    <string name="cd_resume">Continua da dove eri rimasto</string>
+    <string name="cd_settings">Impostazioni app</string>
+    <string name="cd_close">Chiudi</string>
+
+    <string name="menu_resume">Continua da dove eri rimasto</string>
+    <string name="menu_app">Apri app</string>
+    <string name="menu_close">Chiudi</string>
+</resources>

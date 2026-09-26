@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">Boltun</string>
+    <string name="app_author">Yazar: Tar3ah</string>
+    <string name="a11y_description">Boltun\'un herhangi bir uygulamada seçtiğiniz metni yakalamasını ve sesli okumasını sağlar.</string>
+
+    <string name="notif_channel_name">Oynatma</string>
+    <string name="notif_title">Boltun etkin</string>
+    <string name="notif_text">Seçili metni okumak için yüzen düğmeye dokunun</string>
+    <string name="notif_stop">Durdur</string>
+
+    <string name="btn_overlay">1. Diğer uygulamaların üzerinde göstermeye izin ver</string>
+    <string name="btn_a11y">2. Erişilebilirlik hizmetini etkinleştir</string>
+    <string name="btn_notif">3. Bildirimlere izin ver</string>
+    <string name="btn_start">Yüzen düğmeyi göster</string>
+    <string name="btn_stop">Yüzen düğmeyi gizle</string>
+    <string name="btn_battery">Pil optimizasyonunu kapat</string>
+    <string name="btn_tts_settings">Varsayılan konuşma motoru</string>
+    <string name="btn_pick_engine">Konuşma motorunu seç</string>
+    <string name="engine_pick_title">Konuşma motoru</string>
+    <string name="engine_system_option">Sistem varsayılanı</string>
+    <string name="engine_none">Yüklü konuşma motoru yok</string>
+    <string name="engine_disabled">devre dışı</string>
+    <string name="engine_enable_hint">Bu motoru sistem metin okuma ayarlarından etkinleştirin</string>
+    <string name="engine_label">Konuşma motoru: %1$s</string>
+    <string name="btn_test">Sesi dene</string>
+    <string name="btn_probe">Seçim yakalamayı denetle</string>
+    <string name="probe_ok">%1$d karakter yakalandı [%2$s]:\n%3$s</string>
+    <string name="probe_empty">Hiçbir şey yakalanmadı (seçim ve pano yok)</string>
+
+    <string name="speed_label">Hız: %1$.2f×</string>
+    <string name="status">Durum</string>
+    <string name="status_overlay_on">Kaplama: izinli</string>
+    <string name="status_overlay_off">Kaplama: izinli değil</string>
+    <string name="status_a11y_on">Erişilebilirlik: açık</string>
+    <string name="status_a11y_off">Erişilebilirlik: kapalı</string>
+    <string name="status_notif_on">Bildirimler: izinli</string>
+    <string name="status_notif_off">Bildirimler: izinli değil</string>
+    <string name="hint">Herhangi bir uygulamada metin seçin, sonra yüzen düğmeye dokunun.</string>
+    <string name="test_phrase">Boltun hazır. Herhangi bir metni seçin ve düğmeye dokunun.</string>
+
+    <string name="toast_no_selection">Hiçbir şey seçilmedi. Metni seçin veya kopyalayın, sonra tekrar dokunun.</string>
+    <string name="toast_no_overlay">Önce diğer uygulamaların üzerinde göstermeye izin verin</string>
+    <string name="toast_a11y_needed">Önce erişilebilirlik hizmetini etkinleştirin</string>
+
+    <string name="cd_play">Oynat</string>
+    <string name="cd_pause">Duraklat</string>
+    <string name="cd_stop">Durdur</string>
+    <string name="cd_speed">Hız</string>
+    <string name="cd_bubble">Sesli oku</string>
+    <string name="cd_prev">Önceki cümle</string>
+    <string name="cd_next">Sonraki cümle</string>
+    <string name="cd_repeat">Cümleyi yinele</string>
+    <string name="cd_replay">Baştan oynat</string>
+    <string name="cd_resume">Kaldığın yerden devam et</string>
+    <string name="cd_settings">Uygulama ayarları</string>
+    <string name="cd_close">Kapat</string>
+
+    <string name="menu_resume">Kaldığın yerden devam et</string>
+    <string name="menu_app">Uygulamayı aç</string>
+    <string name="menu_close">Kapat</string>
+</resources>
