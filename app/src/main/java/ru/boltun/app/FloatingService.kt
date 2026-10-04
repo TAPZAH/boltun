@@ -23,6 +23,7 @@ import android.view.ViewConfiguration
 import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.RemoteViews
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
@@ -71,6 +72,16 @@ class FloatingService : Service(), TtsController.Listener {
             ACTION_TOGGLE -> if (bubbleView != null) applyHide() else applyShow()
             ACTION_SHOW, ACTION_START -> applyShow()
             ACTION_ENSURE, ACTION_SYNC -> applySync()
+            ACTION_PLAY_STOP -> {
+                startInForeground()
+                when (tts.state) {
+                    TtsController.State.SPEAKING -> tts.stop()
+                    TtsController.State.PAUSED -> tts.resume()
+                    TtsController.State.IDLE -> readSelection()
+                }
+                updateNotification()
+                START_STICKY
+            }
             ACTION_SPEAK -> {
                 startInForeground()
                 if (bubbleView == null && prefs.enabled) showOverlay()
@@ -172,22 +183,42 @@ class FloatingService : Service(), TtsController.Listener {
             Intent(this, FloatingService::class.java).setAction(ACTION_TOGGLE),
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
         )
-        val stop = PendingIntent.getService(
-            this, 1,
-            Intent(this, FloatingService::class.java).setAction(ACTION_STOP),
+        val playStop = PendingIntent.getService(
+            this, 3,
+            Intent(this, FloatingService::class.java).setAction(ACTION_PLAY_STOP),
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
         )
-        val toggleLabel = getString(if (bubbleView != null) R.string.btn_stop else R.string.btn_start)
+        val settings = PendingIntent.getActivity(
+            this, 4,
+            Intent(this, MainActivity::class.java),
+            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
+        )
+
+        val showingButton = bubbleView != null
+        val speaking = tts.state == TtsController.State.SPEAKING
+
+        val views = RemoteViews(packageName, R.layout.notification_content)
+        views.setImageViewResource(
+            R.id.notif_btn_toggle,
+            if (showingButton) R.drawable.ic_visibility_off else R.drawable.ic_visibility
+        )
+        views.setImageViewResource(
+            R.id.notif_btn_play,
+            if (speaking) R.drawable.ic_stop else R.drawable.ic_play
+        )
+        views.setOnClickPendingIntent(R.id.notif_root, open)
+        views.setOnClickPendingIntent(R.id.notif_btn_toggle, toggle)
+        views.setOnClickPendingIntent(R.id.notif_btn_play, playStop)
+        views.setOnClickPendingIntent(R.id.notif_btn_settings, settings)
+
         return NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_bubble)
-            .setContentTitle(getString(R.string.notif_title))
-            .setContentText(getString(R.string.notif_text))
+            .setCustomContentView(views)
+            .setCustomBigContentView(views)
             .setOngoing(true)
             .setShowWhen(false)
             .setPriority(NotificationCompat.PRIORITY_LOW)
             .setContentIntent(open)
-            .addAction(0, toggleLabel, toggle)
-            .addAction(0, getString(R.string.notif_stop), stop)
             .build()
     }
 
@@ -588,6 +619,7 @@ class FloatingService : Service(), TtsController.Listener {
                 }
                 TtsController.State.IDLE -> hideMenu()
             }
+            updateNotification()
         }
     }
 
@@ -611,6 +643,7 @@ class FloatingService : Service(), TtsController.Listener {
         const val ACTION_TOGGLE = "ru.boltun.app.action.TOGGLE"
         const val ACTION_ENSURE = "ru.boltun.app.action.ENSURE"
         const val ACTION_SYNC = "ru.boltun.app.action.SYNC"
+        const val ACTION_PLAY_STOP = "ru.boltun.app.action.PLAY_STOP"
         const val ACTION_STOP = "ru.boltun.app.action.STOP"
         const val ACTION_SPEAK = "ru.boltun.app.action.SPEAK"
         const val EXTRA_TEXT = "ru.boltun.app.extra.TEXT"
