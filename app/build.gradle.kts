@@ -28,8 +28,8 @@ android {
         applicationId = "ru.boltun.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.1.0"
         resourceConfigurations += listOf(
             "ru", "en", "es",
             "de", "fr", "it", "pt", "nl", "pl", "tr",
@@ -70,6 +70,15 @@ android {
 
     kotlinOptions {
         jvmTarget = "17"
+    }
+
+    @Suppress("DEPRECATION")
+    applicationVariants.all {
+        val version = versionName
+        outputs.all {
+            (this as com.android.build.gradle.internal.api.BaseVariantOutputImpl).outputFileName =
+                "boltun_v$version.apk"
+        }
     }
 }
 

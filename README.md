@@ -107,8 +107,8 @@ sdk.dir=/path/to/android-sdk
 ./gradlew bundleRelease
 ```
 
-- Debug: `app/build/outputs/apk/debug/app-debug.apk`
-- Release: `app/build/outputs/apk/release/app-release.apk`
+- Debug: `app/build/outputs/apk/debug/boltun_v<version>.apk`
+- Release: `app/build/outputs/apk/release/boltun_v<version>.apk`
 - AAB: `app/build/outputs/bundle/release/app-release.aab`
 
 Параметры подписи — в `keystore.properties` (файл и сам ключ в репозиторий не входят).
@@ -116,7 +116,7 @@ sdk.dir=/path/to/android-sdk
 ## Установка
 
 ```bash
-adb install -r app/build/outputs/apk/release/app-release.apk
+adb install -r app/build/outputs/apk/release/boltun_v1.1.0.apk
 ```
 
 ## Структура
