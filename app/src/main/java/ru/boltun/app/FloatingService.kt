@@ -82,6 +82,12 @@ class FloatingService : Service(), TtsController.Listener {
                 updateNotification()
                 START_STICKY
             }
+            ACTION_SPEED -> {
+                startInForeground()
+                cycleSpeed()
+                updateNotification()
+                START_STICKY
+            }
             ACTION_SPEAK -> {
                 startInForeground()
                 if (bubbleView == null && prefs.enabled) showOverlay()
@@ -188,9 +194,9 @@ class FloatingService : Service(), TtsController.Listener {
             Intent(this, FloatingService::class.java).setAction(ACTION_PLAY_STOP),
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
         )
-        val settings = PendingIntent.getActivity(
-            this, 4,
-            Intent(this, MainActivity::class.java),
+        val speed = PendingIntent.getService(
+            this, 5,
+            Intent(this, FloatingService::class.java).setAction(ACTION_SPEED),
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
         )
 
@@ -206,10 +212,11 @@ class FloatingService : Service(), TtsController.Listener {
             R.id.notif_btn_play,
             if (speaking) R.drawable.ic_stop else R.drawable.ic_play
         )
+        views.setTextViewText(R.id.notif_speed, formatSpeed(tts.speed))
         views.setOnClickPendingIntent(R.id.notif_root, open)
         views.setOnClickPendingIntent(R.id.notif_btn_toggle, toggle)
         views.setOnClickPendingIntent(R.id.notif_btn_play, playStop)
-        views.setOnClickPendingIntent(R.id.notif_btn_settings, settings)
+        views.setOnClickPendingIntent(R.id.notif_speed, speed)
 
         return NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_bubble)
@@ -644,6 +651,7 @@ class FloatingService : Service(), TtsController.Listener {
         const val ACTION_ENSURE = "ru.boltun.app.action.ENSURE"
         const val ACTION_SYNC = "ru.boltun.app.action.SYNC"
         const val ACTION_PLAY_STOP = "ru.boltun.app.action.PLAY_STOP"
+        const val ACTION_SPEED = "ru.boltun.app.action.SPEED"
         const val ACTION_STOP = "ru.boltun.app.action.STOP"
         const val ACTION_SPEAK = "ru.boltun.app.action.SPEAK"
         const val EXTRA_TEXT = "ru.boltun.app.extra.TEXT"
