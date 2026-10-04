@@ -55,4 +55,5 @@
     <string name="cd_close">Schließen</string>
 
     <string name="err_generic">Wiedergabefehler</string>
+    <string name="chk_notification">In Benachrichtigungen behalten</string>
 </resources>

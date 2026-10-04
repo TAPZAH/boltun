@@ -55,4 +55,5 @@
     <string name="cd_close">Fermer</string>
 
     <string name="err_generic">Erreur de lecture</string>
+    <string name="chk_notification">Garder dans les notifications</string>
 </resources>

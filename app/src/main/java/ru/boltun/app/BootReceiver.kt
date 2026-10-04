@@ -10,8 +10,9 @@ class BootReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent?) {
         if (intent?.action != Intent.ACTION_BOOT_COMPLETED) return
         val prefs = Prefs(context)
-        if (prefs.enabled && Settings.canDrawOverlays(context)) {
-            FloatingService.start(context)
+        val showButton = prefs.enabled && Settings.canDrawOverlays(context)
+        if (prefs.keepNotification || showButton) {
+            FloatingService.ensure(context)
         }
     }
 }

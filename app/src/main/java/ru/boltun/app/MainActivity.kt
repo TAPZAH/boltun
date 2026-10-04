@@ -12,6 +12,7 @@ import android.os.Bundle
 import android.provider.Settings
 import android.view.accessibility.AccessibilityManager
 import android.widget.Button
+import android.widget.CheckBox
 import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
@@ -66,6 +67,17 @@ class MainActivity : Activity() {
             tts.speak(getString(R.string.test_phrase))
         }
         findViewById<Button>(R.id.btn_probe).setOnClickListener { probeCapture() }
+
+        val keep = findViewById<CheckBox>(R.id.chk_notification)
+        keep.isChecked = prefs.keepNotification
+        keep.setOnCheckedChangeListener { _, checked ->
+            prefs.keepNotification = checked
+            if (checked) {
+                FloatingService.ensure(this)
+            } else if (FloatingService.running) {
+                FloatingService.sync(this)
+            }
+        }
     }
 
     private fun probeCapture() {
@@ -111,8 +123,7 @@ class MainActivity : Activity() {
     }
 
     private fun stopFloating() {
-        prefs.enabled = false
-        FloatingService.stop(this)
+        FloatingService.hide(this)
         updateStatus()
     }
 

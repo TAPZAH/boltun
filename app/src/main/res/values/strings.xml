@@ -55,4 +55,5 @@
     <string name="cd_close">Close</string>
 
     <string name="err_generic">Playback error</string>
+    <string name="chk_notification">Keep in notifications</string>
 </resources>

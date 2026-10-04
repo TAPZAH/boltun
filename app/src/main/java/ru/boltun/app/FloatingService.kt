@@ -13,6 +13,7 @@ import android.os.Build
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
+import android.provider.Settings
 import android.util.TypedValue
 import android.view.GestureDetector
 import android.view.Gravity
@@ -48,6 +49,7 @@ class FloatingService : Service(), TtsController.Listener {
 
     override fun onCreate() {
         super.onCreate()
+        running = true
         windowManager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
         prefs = Prefs(this)
         tts = TtsController(this).apply {
@@ -58,26 +60,66 @@ class FloatingService : Service(), TtsController.Listener {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        when (intent?.action) {
+        return when (intent?.action) {
             ACTION_STOP -> {
+                startInForeground()
+                prefs.enabled = false
                 stopSelf()
-                return START_NOT_STICKY
+                START_NOT_STICKY
             }
+            ACTION_HIDE -> applyHide()
+            ACTION_TOGGLE -> if (bubbleView != null) applyHide() else applyShow()
+            ACTION_SHOW, ACTION_START -> applyShow()
+            ACTION_ENSURE, ACTION_SYNC -> applySync()
             ACTION_SPEAK -> {
                 startInForeground()
-                if (bubbleView == null) attachOverlay()
+                if (bubbleView == null && prefs.enabled) showOverlay()
                 val text = intent.getStringExtra(EXTRA_TEXT)
                 if (!text.isNullOrBlank()) tts.speak(text)
-                return START_STICKY
+                START_STICKY
             }
+            else -> applySync()
         }
-        startInForeground()
-        if (bubbleView == null) attachOverlay()
+    }
+
+    private fun applyShow(): Int {
         prefs.enabled = true
+        startInForeground()
+        showOverlay()
+        updateNotification()
         return START_STICKY
     }
 
+    private fun applyHide(): Int {
+        startInForeground()
+        prefs.enabled = false
+        hideOverlay()
+        if (!prefs.keepNotification) {
+            stopSelf()
+            return START_NOT_STICKY
+        }
+        updateNotification()
+        return START_STICKY
+    }
+
+    private fun applySync(): Int {
+        startInForeground()
+        if (prefs.enabled) {
+            showOverlay()
+            updateNotification()
+            return START_STICKY
+        }
+        hideOverlay()
+        if (prefs.keepNotification) {
+            updateNotification()
+            return START_STICKY
+        }
+        stopSelf()
+        return START_NOT_STICKY
+    }
+
     override fun onDestroy() {
+        running = false
         bubbleView?.let { removeWindow(it) }
         menuView?.let { removeWindow(it) }
         bubbleView = null
@@ -112,10 +154,22 @@ class FloatingService : Service(), TtsController.Listener {
         ServiceCompat.startForeground(this, NOTIFICATION_ID, notification, type)
     }
 
+    private fun updateNotification() {
+        try {
+            startInForeground()
+        } catch (_: Exception) {
+        }
+    }
+
     private fun buildNotification(): Notification {
         val open = PendingIntent.getActivity(
             this, 0,
             Intent(this, MainActivity::class.java),
+            PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
+        )
+        val toggle = PendingIntent.getService(
+            this, 2,
+            Intent(this, FloatingService::class.java).setAction(ACTION_TOGGLE),
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
         )
         val stop = PendingIntent.getService(
@@ -123,6 +177,7 @@ class FloatingService : Service(), TtsController.Listener {
             Intent(this, FloatingService::class.java).setAction(ACTION_STOP),
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
         )
+        val toggleLabel = getString(if (bubbleView != null) R.string.btn_stop else R.string.btn_start)
         return NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_bubble)
             .setContentTitle(getString(R.string.notif_title))
@@ -131,6 +186,7 @@ class FloatingService : Service(), TtsController.Listener {
             .setShowWhen(false)
             .setPriority(NotificationCompat.PRIORITY_LOW)
             .setContentIntent(open)
+            .addAction(0, toggleLabel, toggle)
             .addAction(0, getString(R.string.notif_stop), stop)
             .build()
     }
@@ -145,6 +201,29 @@ class FloatingService : Service(), TtsController.Listener {
             NotificationManager.IMPORTANCE_LOW
         ).apply { setShowBadge(false) }
         manager.createNotificationChannel(channel)
+    }
+
+    private fun showOverlay() {
+        if (bubbleView != null) return
+        if (!Settings.canDrawOverlays(this)) {
+            toast(getString(R.string.toast_no_overlay))
+            return
+        }
+        attachOverlay()
+    }
+
+    private fun hideOverlay() {
+        bubbleView?.let { removeWindow(it) }
+        menuView?.let { removeWindow(it) }
+        bubbleView = null
+        menuView = null
+        bubbleParams = null
+        menuParams = null
+        counterView = null
+        playPauseButton = null
+        speedButton = null
+        menuAdded = false
+        tts.stop()
     }
 
     private fun attachOverlay() {
@@ -527,6 +606,11 @@ class FloatingService : Service(), TtsController.Listener {
 
     companion object {
         const val ACTION_START = "ru.boltun.app.action.START"
+        const val ACTION_SHOW = "ru.boltun.app.action.SHOW"
+        const val ACTION_HIDE = "ru.boltun.app.action.HIDE"
+        const val ACTION_TOGGLE = "ru.boltun.app.action.TOGGLE"
+        const val ACTION_ENSURE = "ru.boltun.app.action.ENSURE"
+        const val ACTION_SYNC = "ru.boltun.app.action.SYNC"
         const val ACTION_STOP = "ru.boltun.app.action.STOP"
         const val ACTION_SPEAK = "ru.boltun.app.action.SPEAK"
         const val EXTRA_TEXT = "ru.boltun.app.extra.TEXT"
@@ -537,13 +621,31 @@ class FloatingService : Service(), TtsController.Listener {
 
         private val SPEEDS = listOf(0.75f, 0.9f, 1.0f, 1.1f, 1.25f, 1.5f, 2.0f)
 
-        fun start(context: Context) {
-            val intent = Intent(context, FloatingService::class.java).setAction(ACTION_START)
+        @Volatile
+        var running = false
+            private set
+
+        private fun send(context: Context, action: String) {
+            val intent = Intent(context, FloatingService::class.java).setAction(action)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 context.startForegroundService(intent)
             } else {
                 context.startService(intent)
             }
+        }
+
+        fun start(context: Context) = send(context, ACTION_START)
+
+        fun show(context: Context) = send(context, ACTION_SHOW)
+
+        fun hide(context: Context) = send(context, ACTION_HIDE)
+
+        fun ensure(context: Context) = send(context, ACTION_ENSURE)
+
+        fun sync(context: Context) = send(context, ACTION_SYNC)
+
+        fun stop(context: Context) {
+            context.stopService(Intent(context, FloatingService::class.java))
         }
 
         fun speak(context: Context, text: String) {
@@ -555,10 +657,6 @@ class FloatingService : Service(), TtsController.Listener {
             } else {
                 context.startService(intent)
             }
-        }
-
-        fun stop(context: Context) {
-            context.stopService(Intent(context, FloatingService::class.java))
         }
     }
 }

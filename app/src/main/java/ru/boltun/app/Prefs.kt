@@ -26,6 +26,10 @@ class Prefs(context: Context) {
         get() = sp.getInt(KEY_LAST_INDEX, 0)
         set(value) = sp.edit().putInt(KEY_LAST_INDEX, value).apply()
 
+    var keepNotification: Boolean
+        get() = sp.getBoolean(KEY_KEEP_NOTIFICATION, false)
+        set(value) = sp.edit().putBoolean(KEY_KEEP_NOTIFICATION, value).apply()
+
     var x: Int
         get() = sp.getInt(KEY_X, 0)
         set(value) = sp.edit().putInt(KEY_X, value).apply()
@@ -41,6 +45,7 @@ class Prefs(context: Context) {
         private const val KEY_ENGINE = "engine"
         private const val KEY_LAST_TEXT = "last_text"
         private const val KEY_LAST_INDEX = "last_index"
+        private const val KEY_KEEP_NOTIFICATION = "keep_notification"
         private const val KEY_X = "x"
         private const val KEY_Y = "y"
     }

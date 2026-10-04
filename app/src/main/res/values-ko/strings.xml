@@ -55,4 +55,5 @@
     <string name="cd_close">닫기</string>
 
     <string name="err_generic">재생 오류</string>
+    <string name="chk_notification">알림에 유지</string>
 </resources>
