@@ -1,6 +1,6 @@
 # Boltun
 
-[Русский](#русский) · **English**
+**English** · [Русский](#русский)
 
 Android app: reads the selected and copied text aloud by tapping a floating button over other apps.
 
