@@ -57,4 +57,5 @@
     <string name="err_generic">Playback error</string>
     <string name="chk_notification">Keep in notifications</string>
     <string name="btn_permissions">Permissions</string>
+    <string name="status_all_granted">All permissions granted</string>
 </resources>

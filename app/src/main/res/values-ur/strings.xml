@@ -57,4 +57,5 @@
     <string name="err_generic">پلے بیک کی خرابی</string>
     <string name="chk_notification">اطلاعات میں رکھیں</string>
     <string name="btn_permissions">اجازتیں</string>
+    <string name="status_all_granted">تمام اجازتیں دے دی گئیں</string>
 </resources>

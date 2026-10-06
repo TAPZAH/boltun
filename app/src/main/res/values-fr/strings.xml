@@ -57,4 +57,5 @@
     <string name="err_generic">Erreur de lecture</string>
     <string name="chk_notification">Garder dans les notifications</string>
     <string name="btn_permissions">Autorisations</string>
+    <string name="status_all_granted">Toutes les autorisations accordées</string>
 </resources>

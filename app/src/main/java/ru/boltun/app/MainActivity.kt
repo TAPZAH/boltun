@@ -10,6 +10,9 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
+import android.text.SpannableStringBuilder
+import android.text.Spanned
+import android.text.style.StrikethroughSpan
 import android.view.accessibility.AccessibilityManager
 import android.widget.Button
 import android.widget.CheckBox
@@ -112,21 +115,21 @@ class MainActivity : Activity() {
     }
 
     private fun showPermissionsDialog() {
-        val items = arrayOf(
-            getString(R.string.btn_overlay),
-            getString(R.string.btn_a11y),
-            getString(R.string.btn_notif)
-        )
-        AlertDialog.Builder(this)
-            .setTitle(R.string.btn_permissions)
-            .setItems(items) { _, which ->
-                when (which) {
-                    0 -> openOverlaySettings()
-                    1 -> openAccessibilitySettings()
-                    2 -> requestNotifications()
-                }
-            }
-            .show()
+        val view = layoutInflater.inflate(R.layout.dialog_permissions, null)
+        val dialog = AlertDialog.Builder(this).setView(view).create()
+        view.findViewById<Button>(R.id.perm_overlay).setOnClickListener {
+            dialog.dismiss()
+            openOverlaySettings()
+        }
+        view.findViewById<Button>(R.id.perm_a11y).setOnClickListener {
+            dialog.dismiss()
+            openAccessibilitySettings()
+        }
+        view.findViewById<Button>(R.id.perm_notif).setOnClickListener {
+            dialog.dismiss()
+            requestNotifications()
+        }
+        dialog.show()
     }
 
     private fun startFloating() {
@@ -144,12 +147,40 @@ class MainActivity : Activity() {
     }
 
     private fun updateStatus() {
-        val lines = listOf(
-            if (Settings.canDrawOverlays(this)) R.string.status_overlay_on else R.string.status_overlay_off,
-            if (isAccessibilityEnabled()) R.string.status_a11y_on else R.string.status_a11y_off,
-            if (notificationsAllowed()) R.string.status_notif_on else R.string.status_notif_off
-        )
-        statusView.text = lines.joinToString("\n") { getString(it) }
+        val overlay = Settings.canDrawOverlays(this)
+        val a11y = isAccessibilityEnabled()
+        val notifications = notificationsAllowed()
+
+        if (overlay && a11y && notifications) {
+            statusView.text = getString(R.string.status_all_granted)
+            return
+        }
+
+        val builder = SpannableStringBuilder()
+        appendStatusLine(builder, R.string.status_overlay_on, R.string.status_overlay_off, overlay)
+        appendStatusLine(builder, R.string.status_a11y_on, R.string.status_a11y_off, a11y)
+        appendStatusLine(builder, R.string.status_notif_on, R.string.status_notif_off, notifications)
+        statusView.text = builder
+    }
+
+    private fun appendStatusLine(
+        builder: SpannableStringBuilder,
+        grantedRes: Int,
+        deniedRes: Int,
+        granted: Boolean
+    ) {
+        val text = getString(if (granted) grantedRes else deniedRes)
+        val start = builder.length
+        builder.append(text)
+        if (granted) {
+            builder.setSpan(
+                StrikethroughSpan(),
+                start,
+                builder.length,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+        }
+        builder.append('\n')
     }
 
     private fun updateSpeedLabel(value: Float) {

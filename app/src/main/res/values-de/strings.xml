@@ -57,4 +57,5 @@
     <string name="err_generic">Wiedergabefehler</string>
     <string name="chk_notification">In Benachrichtigungen behalten</string>
     <string name="btn_permissions">Berechtigungen</string>
+    <string name="status_all_granted">Alle Berechtigungen erteilt</string>
 </resources>

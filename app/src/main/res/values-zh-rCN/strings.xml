@@ -57,4 +57,5 @@
     <string name="err_generic">播放错误</string>
     <string name="chk_notification">保留在通知中</string>
     <string name="btn_permissions">权限</string>
+    <string name="status_all_granted">已授予所有权限</string>
 </resources>

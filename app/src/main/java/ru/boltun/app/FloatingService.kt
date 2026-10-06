@@ -392,7 +392,7 @@ class FloatingService : Service(), TtsController.Listener {
         val replay = makeIconButton(R.drawable.ic_replay, R.string.cd_replay)
         val resume = makeIconButton(R.drawable.ic_resume, R.string.cd_resume)
         val settings = makeIconButton(R.drawable.ic_settings, R.string.cd_settings)
-        val hide = makeIconButton(R.drawable.ic_visibility_off, R.string.btn_stop)
+        val hide = makeIconButton(R.drawable.ic_hide_button, R.string.btn_stop)
         val close = makeIconButton(R.drawable.ic_close, R.string.cd_close)
         replay.setOnClickListener {
             tts.replay()

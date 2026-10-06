@@ -57,4 +57,5 @@
     <string name="err_generic">प्लेबैक त्रुटि</string>
     <string name="chk_notification">सूचनाओं में रखें</string>
     <string name="btn_permissions">अनुमतियाँ</string>
+    <string name="status_all_granted">सभी अनुमतियाँ दी गईं</string>
 </resources>

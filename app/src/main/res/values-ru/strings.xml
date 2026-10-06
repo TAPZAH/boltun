@@ -57,4 +57,5 @@
     <string name="err_generic">Ошибка воспроизведения</string>
     <string name="chk_notification">Держать в уведомлениях</string>
     <string name="btn_permissions">Разрешения</string>
+    <string name="status_all_granted">Все разрешения выданы</string>
 </resources>
