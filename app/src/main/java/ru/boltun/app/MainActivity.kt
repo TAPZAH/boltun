@@ -55,9 +55,7 @@ class MainActivity : Activity() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
-        findViewById<Button>(R.id.btn_overlay).setOnClickListener { openOverlaySettings() }
-        findViewById<Button>(R.id.btn_a11y).setOnClickListener { openAccessibilitySettings() }
-        findViewById<Button>(R.id.btn_notif).setOnClickListener { requestNotifications() }
+        findViewById<Button>(R.id.btn_permissions).setOnClickListener { showPermissionsDialog() }
         findViewById<Button>(R.id.btn_start).setOnClickListener { startFloating() }
         findViewById<Button>(R.id.btn_stop).setOnClickListener { stopFloating() }
         findViewById<Button>(R.id.btn_battery).setOnClickListener { openBatterySettings() }
@@ -111,6 +109,24 @@ class MainActivity : Activity() {
     override fun onDestroy() {
         tts.shutdown()
         super.onDestroy()
+    }
+
+    private fun showPermissionsDialog() {
+        val items = arrayOf(
+            getString(R.string.btn_overlay),
+            getString(R.string.btn_a11y),
+            getString(R.string.btn_notif)
+        )
+        AlertDialog.Builder(this)
+            .setTitle(R.string.btn_permissions)
+            .setItems(items) { _, which ->
+                when (which) {
+                    0 -> openOverlaySettings()
+                    1 -> openAccessibilitySettings()
+                    2 -> requestNotifications()
+                }
+            }
+            .show()
     }
 
     private fun startFloating() {

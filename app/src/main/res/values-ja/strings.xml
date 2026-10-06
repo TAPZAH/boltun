@@ -56,4 +56,5 @@
 
     <string name="err_generic">再生エラー</string>
     <string name="chk_notification">通知に常駐</string>
+    <string name="btn_permissions">権限</string>
 </resources>

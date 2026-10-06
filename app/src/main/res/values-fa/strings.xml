@@ -56,4 +56,5 @@
 
     <string name="err_generic">خطای پخش</string>
     <string name="chk_notification">نگه‌داشتن در اعلان‌ها</string>
+    <string name="btn_permissions">مجوزها</string>
 </resources>

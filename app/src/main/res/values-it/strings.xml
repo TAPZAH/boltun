@@ -56,4 +56,5 @@
 
     <string name="err_generic">Errore di riproduzione</string>
     <string name="chk_notification">Mantieni nelle notifiche</string>
+    <string name="btn_permissions">Autorizzazioni</string>
 </resources>

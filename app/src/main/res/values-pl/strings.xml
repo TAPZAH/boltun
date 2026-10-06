@@ -56,4 +56,5 @@
 
     <string name="err_generic">Błąd odtwarzania</string>
     <string name="chk_notification">Trzymaj w powiadomieniach</string>
+    <string name="btn_permissions">Uprawnienia</string>
 </resources>

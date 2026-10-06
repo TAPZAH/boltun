@@ -392,6 +392,7 @@ class FloatingService : Service(), TtsController.Listener {
         val replay = makeIconButton(R.drawable.ic_replay, R.string.cd_replay)
         val resume = makeIconButton(R.drawable.ic_resume, R.string.cd_resume)
         val settings = makeIconButton(R.drawable.ic_settings, R.string.cd_settings)
+        val hide = makeIconButton(R.drawable.ic_visibility_off, R.string.btn_stop)
         val close = makeIconButton(R.drawable.ic_close, R.string.cd_close)
         replay.setOnClickListener {
             tts.replay()
@@ -405,11 +406,13 @@ class FloatingService : Service(), TtsController.Listener {
             openApp()
             hideMenu()
         }
+        hide.setOnClickListener { applyHide() }
         close.setOnClickListener { hideMenu() }
 
         actionRow.addView(replay)
         actionRow.addView(resume)
         actionRow.addView(settings)
+        actionRow.addView(hide)
         actionRow.addView(close)
 
         menu.addView(counter)
@@ -620,10 +623,7 @@ class FloatingService : Service(), TtsController.Listener {
     override fun onState(state: TtsController.State) {
         handler.post {
             when (state) {
-                TtsController.State.SPEAKING, TtsController.State.PAUSED -> {
-                    showMenu()
-                    updateMenuState()
-                }
+                TtsController.State.SPEAKING, TtsController.State.PAUSED -> updateMenuState()
                 TtsController.State.IDLE -> hideMenu()
             }
             updateNotification()

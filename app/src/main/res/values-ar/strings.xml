@@ -56,4 +56,5 @@
 
     <string name="err_generic">خطأ في التشغيل</string>
     <string name="chk_notification">الإبقاء في الإشعارات</string>
+    <string name="btn_permissions">الأذونات</string>
 </resources>

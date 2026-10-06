@@ -56,4 +56,5 @@
 
     <string name="err_generic">ข้อผิดพลาดในการเล่น</string>
     <string name="chk_notification">คงไว้ในการแจ้งเตือน</string>
+    <string name="btn_permissions">สิทธิ์</string>
 </resources>

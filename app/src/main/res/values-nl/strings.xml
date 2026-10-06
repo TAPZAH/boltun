@@ -56,4 +56,5 @@
 
     <string name="err_generic">Afspeelfout</string>
     <string name="chk_notification">In meldingen houden</string>
+    <string name="btn_permissions">Machtigingen</string>
 </resources>

@@ -56,4 +56,5 @@
 
     <string name="err_generic">Kesalahan pemutaran</string>
     <string name="chk_notification">Simpan di notifikasi</string>
+    <string name="btn_permissions">Izin</string>
 </resources>

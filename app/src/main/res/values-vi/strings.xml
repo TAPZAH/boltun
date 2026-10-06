@@ -56,4 +56,5 @@
 
     <string name="err_generic">Lỗi phát lại</string>
     <string name="chk_notification">Giữ trong thông báo</string>
+    <string name="btn_permissions">Quyền</string>
 </resources>

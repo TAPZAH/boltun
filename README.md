@@ -16,9 +16,9 @@ Author: **Tar3ah**
 
 ### Control menu (double-tap the button)
 - Buttons ⏮ back · ⏯ start/pause · ⏹ stop · ⏭ forward · speed. Seek by sentence.
-- Second row: ↻ replay from start · 🕓 continue where left off · ⚙ app/settings · ✕ close.
+- Second row: ↻ replay from start · 🕓 continue where left off · ⚙ app/settings · 🙈 hide button · ✕ close.
 - Sentence counter, updates as reading progresses.
-- The menu appears automatically during playback and flips to whichever side has room.
+- Open the menu by double-tapping the button; it flips to whichever side has room.
 - Long press the button — stop.
 
 ### Ways to start
@@ -35,20 +35,18 @@ Author: **Tar3ah**
 
 ## First run
 
-1. "Allow display over other apps" — opens system settings.
-2. "Enable Accessibility service" — enable **Boltun**.
-3. "Allow notifications" (Android 13+).
-4. "Disable battery optimization" — so the service isn't killed.
-5. "Show floating button".
+1. Tap **Permissions** and grant, in turn: "display over other apps", "Accessibility service" (enable **Boltun**), "notifications" (Android 13+).
+2. "Disable battery optimization" — so the service isn't killed.
+3. "Show floating button".
 
 ## Usage
 
 - Select text in any app and tap the floating button (single tap).
 - **Double tap** the button — open/close the control menu.
-- Menu (appears automatically during playback):
+- Menu (open with a double tap):
   - sentence counter `7 / 42` (updates as reading progresses);
   - top row: ⏮ back, ⏯ start/pause, ⏹ stop, ⏭ forward, speed;
-  - bottom row: ↻ replay from start, 🕓 continue where left off, ⚙ app, ✕ close.
+  - bottom row: ↻ replay from start, 🕓 continue where left off, ⚙ app, 🙈 hide button, ✕ close.
 - Long press the button — stop.
 - The button is draggable; the position is remembered and the menu flips to the side with room.
 - Via the selection menu you can choose "Boltun" (`PROCESS_TEXT`) or "Share".
@@ -201,9 +199,9 @@ Android-приложение: озвучивает выделенный и ск�
 
 ### Меню управления (двойной тап по кнопке)
 - Кнопки ⏮ назад · ⏯ старт/пауза · ⏹ стоп · ⏭ вперёд · скорость. Перемотка предложениями.
-- Вторая строка: ↻ переиграть с начала · 🕓 продолжить с места · ⚙ приложение/настройки · ✕ закрыть.
+- Вторая строка: ↻ переиграть с начала · 🕓 продолжить с места · ⚙ приложение/настройки · 🙈 скрыть кнопку · ✕ закрыть.
 - Счётчик предложений, обновляется по ходу чтения.
-- Меню появляется автоматически во время озвучки и встаёт с той стороны, где есть место.
+- Меню открывается двойным тапом по кнопке; встаёт с той стороны, где есть место.
 - Долгое нажатие на кнопку — стоп.
 
 ### Способы запуска
@@ -220,20 +218,18 @@ Android-приложение: озвучивает выделенный и ск�
 
 ## Первый запуск
 
-1. «Разрешить показ поверх других окон» — открывает системные настройки.
-2. «Включить службу Специальные возможности» — включите **Boltun**.
-3. «Разрешить уведомления» (Android 13+).
-4. «Отключить оптимизацию батареи» — чтобы сервис не убивался.
-5. «Показать плавающую кнопку».
+1. Нажмите **«Разрешения»** и выдайте по очереди: «показ поверх других окон», «Специальные возможности» (включите **Boltun**), «уведомления» (Android 13+).
+2. «Отключить оптимизацию батареи» — чтобы сервис не убивался.
+3. «Показать плавающую кнопку».
 
 ## Использование
 
 - Выделите текст в любом приложении и нажмите плавающую кнопку (одиночный тап).
 - **Двойной тап** по кнопке — открыть/закрыть меню управления.
-- Меню (появляется автоматически во время озвучки):
+- Меню (открывается двойным тапом):
   - счётчик предложений `7 / 42` (обновляется по ходу чтения);
   - верхняя строка: ⏮ назад, ⏯ старт/пауза, ⏹ стоп, ⏭ вперёд, скорость;
-  - нижняя строка: ↻ переиграть с начала, 🕓 продолжить с места, ⚙ приложение, ✕ закрыть.
+  - нижняя строка: ↻ переиграть с начала, 🕓 продолжить с места, ⚙ приложение, 🙈 скрыть кнопку, ✕ закрыть.
 - Долгое нажатие на кнопку — стоп.
 - Кнопку можно перетаскивать; позиция запоминается, меню автоматически встаёт с той стороны, где есть место.
 - Через меню выделения можно выбрать «Boltun» (`PROCESS_TEXT`) или «Поделиться».

@@ -56,4 +56,5 @@
 
     <string name="err_generic">Oynatma hatası</string>
     <string name="chk_notification">Bildirimlerde tut</string>
+    <string name="btn_permissions">İzinler</string>
 </resources>

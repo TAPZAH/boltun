@@ -35,22 +35,10 @@
             android:textSize="15sp" />
 
         <Button
-            android:id="@+id/btn_overlay"
+            android:id="@+id/btn_permissions"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/btn_overlay" />
-
-        <Button
-            android:id="@+id/btn_a11y"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_a11y" />
-
-        <Button
-            android:id="@+id/btn_notif"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/btn_notif" />
+            android:text="@string/btn_permissions" />
 
         <CheckBox
             android:id="@+id/chk_notification"
